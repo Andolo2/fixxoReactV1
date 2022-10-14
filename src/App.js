@@ -1,6 +1,6 @@
 
 import './App.min.css';
-import Navbar from './components/Navbar';
+import Navbar from './components/frontpage/Navbar';
 
 
 function App() {
