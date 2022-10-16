@@ -1,16 +1,15 @@
 
 import './App.min.css';
-import Navbar from './components/frontpage/Navbar';
-import Jumbotron from './components/frontpage/Jumbotron';
-import WinterClear from './components/frontpage/WinterClear';
+//import Navbar from './components/frontpage/Navbar';
+import Frontpage from './views/Frontpage'
+
 
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <Jumbotron></Jumbotron>
-      <WinterClear></WinterClear>
+      <Frontpage></Frontpage>
+
       
     </>
     
@@ -18,3 +17,4 @@ function App() {
 }
 
 export default App;
+
