@@ -1,17 +1,24 @@
 
 import './App.min.css';
-//import Navbar from './components/frontpage/Navbar';
-import Frontpage from './views/Frontpage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomeView from './views/HomeView'
+import ContactView  from './views/ContactView';
+import ProductView from './views/ProductView'
+import NotFoundView from './views/NotFoundView';
+
 
 
 
 function App() {
   return (
-    <>
-      <Frontpage></Frontpage>
-
-      
-    </>
+    <BrowserRouter>
+     <Routes>
+        <Route path='/' element={<HomeView />} />
+        <Route path='ContactView' element={<ContactView />} />
+        <Route path='ProductView' element={<ProductView />} />
+        <Route path='*' element={<NotFoundView />} />
+     </Routes>
+    </BrowserRouter>
     
   );
 }
