@@ -34,7 +34,11 @@
             @include container-small;
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly
+            justify-content: space-evenly;
+
+            & > .product-row1{
+                display:flex;
+            }
         }
     }
 }

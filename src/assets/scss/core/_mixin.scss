@@ -99,17 +99,23 @@
             }
             .quick-view{
                 height: 15%;
-                
-                button{
-                    display: inline;
-                    
-                }
-            }
+                transition: 0.3s;
 
+               
+              
+            }
             .product-background{
                 background-color: $grey-theme-30;
                
             }
+
+           
+            .quick-view > button{
+                display: inline;
+                
+                
+            }
+            
         }
         
         .product-background{
@@ -118,6 +124,11 @@
             background-color: $white-theme-20;
             transition: 0.3s ease-in-out;
             width: 100%;
+
+            img{
+                width: 225px;
+                height: 200px;
+            }
             
             
         }
@@ -158,12 +169,15 @@
             align-items: center;
             transition: 0.3s ease-in-out;
 
+           
+
             button{
                 border: none;
                 background-color: $red-theme;
                 display: none;
                 color: $white-theme-10;
-                transition: 0.9s ease-in-out;
+                
+               
 
                 #top-left{
                     transform: rotate(135deg);
@@ -268,6 +282,10 @@
             transition: 0.3s ease-in-out;
             width: 100%;
             
+            img{
+                width: 225px;
+                height: 200px;
+            }
             
         }
         
@@ -346,7 +364,7 @@
             
 
 
-            a{
+            button{
                 border-radius: $border-radius-circle;
                 background-color: $white-theme-10;
                 height: 30px;

@@ -1,0 +1,61 @@
+.sale-layout-card-1{
+   
+    & > .container-fluid{
+
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        .grey-card{
+            display: none;
+            
+        }
+
+
+        .sale-card-row-1,
+        .sale-card-row-2{
+            display: flex;
+            
+            @include left-productBox;
+        }
+        
+    }
+}
+
+
+
+
+@media (min-width: 992px){
+    .sale-layout-card-1{
+        margin-bottom: 2rem;
+        & > .container-fluid{
+            
+            @include container-large;
+            display: flex;
+            justify-content: flex-start;
+            padding: 0;
+            
+    
+            .grey-card{
+                width: 50%;
+                height: 820px;
+                background-color: $grey-theme-21;
+                @include black-button;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+    
+                h2{
+                    font-size: $font-size-45;
+                    color: $white-theme-10;
+                }
+                
+            }
+    
+        }
+    }
+    
+}

@@ -1,14 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 
-const ProductCards = () => {
+const ProductCards = ({item}) => {
+  
+  const AddToWish = (e) => {
+    console.log('Added to wish list')
+  }
+
+  const AddToSave = (e) => {
+    console.log('Added to save list')
+  }
+
+  const AddToCart = (e) => {
+    console.log('Added to cart list')
+  }
+
+
   return(
     <div class="product-box">
-    <div class="product-background"></div>
+    <div class="product-background"><img src={item.img} alt='{item.img}'/></div>
     <ul class="product-menu">
-      <button><i class="fa-sharp fa-solid fa-code-compare"></i></button>
-      <button><i class="fa-regular fa-heart"></i></button>
-      <button><i class="fa-regular fa-bag-shopping"></i></button>
+      <button onClick={AddToWish}><i class="fa-sharp fa-solid fa-code-compare"></i></button>
+      <button onClick={AddToSave}><i class="fa-regular fa-heart"></i></button>
+      <button onClick={AddToCart}><i class="fa-regular fa-bag-shopping"></i></button>
     </ul>
     <div class="quick-view">
       <button>
@@ -18,8 +32,8 @@ const ProductCards = () => {
       </button>
     </div>
     <div class="product-content">
-      <h4>Category</h4>
-      <p>Modern Black Blouse</p>
+      <h4>{item.category}</h4>
+      <p>{item.productName}</p>
       <div class="product-stars">
       <i class="fa-solid fa-star"></i>
       <i class="fa-solid fa-star"></i>
@@ -27,7 +41,7 @@ const ProductCards = () => {
       <i class="fa-solid fa-star"></i>
       <i class="fa-solid fa-star"></i>
       </div>
-      <p id="product-price">$35.00</p>
+      <p id="product-price">{item.price}</p>
     </div>
   </div>
   )
