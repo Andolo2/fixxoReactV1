@@ -1,13 +1,15 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Navlinks() {
   return (
     <div>
            <ul className="nav-bar">
-              <li><a className="menu-link" href="index.html">Home</a></li>
-              <li><a className="menu-link" href="#">Categories</a></li>
-              <li><a className="menu-link" href="product-page.html">Products</a></li>
-              <li><a className="menu-link" href="contact.html">Contacts</a></li>
+             <NavLink className="menu-link" to="/">Home</NavLink>
+             <NavLink className="menu-link" to="/Catefories">Catefories</NavLink>
+             <NavLink className="menu-link" to="/ContactView">Contact</NavLink>
+             <NavLink className="menu-link" to="/ProductView">Products</NavLink>
+            
            </ul>
            <button className="hamburger">
               <i className="menuIcon"><i className="fa-sharp fa-solid fa-bars"></i></i>

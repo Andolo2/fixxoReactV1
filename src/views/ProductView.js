@@ -1,8 +1,12 @@
+import NavBarSec from '../sections/NavBarSec'
 import React from 'react'
 
 function ProductPage() {
   return (
-    <div>ProductPage</div>
+    <div>
+      <NavBarSec></NavBarSec>
+      ProductPage
+      </div>
   )
 }
 

@@ -1,3 +1,4 @@
+
 import React from 'react'
 import logo from '../../assets/images/nav-bar/logo.svg'
 
@@ -10,4 +11,3 @@ function Logo() {
 }
 
 export default Logo
-

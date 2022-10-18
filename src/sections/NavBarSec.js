@@ -10,7 +10,13 @@ function NavBar() {
       <div className='container-fluid'>
         <Logo></Logo>
         <NavLinks></NavLinks>
-        <NavIcons></NavIcons>
+        <div className='nav-icons'>
+        <NavIcons link="/*" icon="fa-solid fa-magnifying-glass" />
+        <NavIcons link="/*" icon="fa-sharp fa-solid fa-code-compare" />
+        <NavIcons link="/*" icon="fa-regular fa-heart" />
+        <NavIcons link="/*" icon="fa-regular fa-bag-shopping" />
+        </div>
+        
       </div>
      </header>
     </div>

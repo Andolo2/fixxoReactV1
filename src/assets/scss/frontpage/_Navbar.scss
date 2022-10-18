@@ -29,6 +29,8 @@ header{
                 &:hover{
                     text-decoration: underline;
                 }
+
+                
             }
     }
     
@@ -97,7 +99,14 @@ header{
                     &:hover{
                         color:$red-theme;
                     }
+
+                    
+                    
                 }
+                .active{
+                    color: $red-theme;
+                }
+                
             
             }
             
@@ -120,7 +129,6 @@ header{
                 display: flex;
                 margin: 0;
                 padding: 0;
-                flex: 1;
                 justify-content: flex-end;
     
                 .circle-layout{
@@ -138,7 +146,7 @@ header{
                         justify-content: center;
                         background-color: $white-theme-10;
     
-                        a{
+                        i{
                             margin: 0.9rem;
                             color: $dark-theme;
                             transition: 0.3s;

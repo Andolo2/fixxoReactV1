@@ -163,7 +163,7 @@
                 background-color: $red-theme;
                 display: none;
                 color: $white-theme-10;
-                transition: 0.3s ease-in-out;
+                transition: 0.9s ease-in-out;
 
                 #top-left{
                     transform: rotate(135deg);
@@ -199,7 +199,7 @@
             
 
 
-            a{
+            button{
                 border-radius: $border-radius-circle;
                 background-color: $white-theme-10;
                 height: 30px;

@@ -1,8 +1,12 @@
+import NavBarSec from '../sections/NavBarSec'
 import React from 'react'
 
 function NotFoundView() {
   return (
-    <div>404 - Page not found</div>
+    <div>
+      <NavBarSec></NavBarSec>
+      404 - Page not found
+      </div>
   )
 }
 
