@@ -1,0 +1,40 @@
+.nine-cards{
+    
+    & > .container{
+        
+
+        display: none;
+ 
+    }
+}
+
+@media (min-width: 992px){
+    .nine-cards{
+    
+        & > .container{
+            margin-bottom: 3rem;
+            border-bottom: 2px solid $grey-theme-20;
+            @include container-small;
+            
+            
+            
+           display: flex;
+           justify-content: space-evenly;
+           flex-direction: column;
+    
+    
+            .card-row-1,
+            .card-row-2,
+            .card-row-3{
+                
+                @include side-by-side-productBox;
+                display: flex;
+                
+            }
+
+            
+    
+            
+        }
+    }
+}

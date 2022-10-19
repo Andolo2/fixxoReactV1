@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SaleCard1 = ({item}) => {
+const NineCard = ({item}) => {
 
     const AddToWish = (e) => {
         console.log('Added to wish list')
@@ -45,4 +45,4 @@ const SaleCard1 = ({item}) => {
     )
 }
 
-export default SaleCard1
+export default NineCard

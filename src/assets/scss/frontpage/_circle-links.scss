@@ -1,0 +1,44 @@
+.circle-links{
+    & > .container{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        .circle-container{
+            text-align: center;
+
+            h2,
+            a{
+                font-size: $font-size-20;
+                font-weight: $font-weight-bold;
+                text-decoration: none;
+                color: black;
+                transition: 0.1s;
+            }
+
+            p{
+                font-size: $font-size-16;
+                font-weight:$font-weight-regular ;
+            }
+
+            &:hover{
+              h2{
+            
+                font-weight: $font-weight-semi-regular;
+              }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 992px){
+    .circle-links{
+        & > .container{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            @include container-small;
+            
+        }
+    }
+}
