@@ -15,29 +15,29 @@ const SaleCard2 = ({item}) => {
       }
     
     return(
-        <div class="product-box">
-        <div class="product-background"><img src={item.img} alt='{item.img}'/></div>
-        <ul class="product-menu">
-          <button onClick={AddToWish}><i class="fa-sharp fa-solid fa-code-compare"></i></button>
-          <button onClick={AddToSave}><i class="fa-regular fa-heart"></i></button>
-          <button onClick={AddToCart}><i class="fa-regular fa-bag-shopping"></i></button>
+        <div className="product-box">
+        <div className="product-background"><img src={item.img} alt='{item.img}'/></div>
+        <ul className="product-menu">
+          <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
+          <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
+          <button onClick={AddToCart}><i className="fa-regular fa-bag-shopping"></i></button>
         </ul>
-        <div class="quick-view">
+        <div className="quick-view">
           <button>
-          <i id="top-left" class="fa-solid fa-chevron-down"></i>
+          <i id="top-left" className="fa-solid fa-chevron-down"></i>
           SHOP NOW
-          <i id="bottom-right" class="fa-solid fa-chevron-up"></i>
+          <i id="bottom-right" className="fa-solid fa-chevron-up"></i>
           </button>
         </div>
-        <div class="product-content">
+        <div className="product-content">
           <h4>{item.category}</h4>
           <p>{item.productName}</p>
-          <div class="product-stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
+          <div className="product-stars">
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
           </div>
           <p id="product-price">{item.price}</p>
         </div>

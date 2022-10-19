@@ -3,14 +3,14 @@ import manCoat from '../../assets/images/winter-clear-images/man-with-coat.png'
 function WinterClearRight() {
   return (
     <div>
-        <div class="new-arrival-content">
+        <div className="new-arrival-content">
         <img src={manCoat} alt="man-with-coat"/>
-        <div class="new-arrival-text">
+        <div className="new-arrival-text">
              <h2>NEW <br/> ARRIVAL</h2>
              <button>
-              <i id="top-left" class="fa-solid fa-chevron-down"></i>
+              <i id="top-left" className="fa-solid fa-chevron-down"></i>
               SHOP NOW
-              <i id="bottom-right" class="fa-solid fa-chevron-up"></i>
+              <i id="bottom-right" className="fa-solid fa-chevron-up"></i>
            </button>
             </div>
         </div>

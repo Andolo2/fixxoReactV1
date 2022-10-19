@@ -1,0 +1,98 @@
+.page-nav{
+    padding: 0;
+    & > .container{
+        margin-top: 3rem;
+        text-align: left;
+        @include container-small;
+        
+    
+    
+        .nav-list{
+            display: flex;
+            align-items: center;
+            
+            li{
+                list-style: none;
+                display: inline-block;
+                font-size: $font-size-16;
+                font-weight: $font-weight-medium;
+                margin-left: 0.5rem;
+            }   
+        }
+    }
+}
+
+.map-layout{
+
+    & > .container-fluid{
+        
+        iframe{
+            margin-top:5rem;
+            width: 100%;
+            padding: 0;
+        }
+
+    }   
+
+    & > .container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+        @include container-small;
+        
+
+        .contact-input{
+          h3{
+            font-size: $font-size-18;
+            font-weight: $font-weight-bold;
+            margin-bottom: 1rem;
+          }
+        
+
+          .contact-form{
+            
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 1rem;
+
+            .input-control{
+                position: relative;
+                width: 49%;
+                
+                label{
+                    display: none;
+                }
+                .input-area{
+                    width: 100%;
+                    display: flex;
+                    padding-left: 2rem;
+                    border-color: solid $grey-theme-10;
+                }
+
+               
+            }
+          }
+
+        }
+        .text-area{
+            display: flex;
+            justify-content: center;
+            
+            textarea{
+                width: 100%;
+                height: 140px;
+            }
+        }
+
+        .submit-form{
+            width: 207px;
+            height: 50px;
+            color: $white-theme-10;
+            background-color:$red-theme;
+            border: none;
+        }
+    }
+}

@@ -2,6 +2,7 @@
 @import './core/variables';
 
 
+
 @import './frontpage/Navbar';
 @import './frontpage/Jumbotron';
 @import './frontpage/WinterClear';
@@ -14,4 +15,7 @@
 @import './frontpage/nine-cards';
 @import './frontpage/circle-links';
 @import './frontpage/footer';
+@import './Contact/contact-form';
+@import './ProductPage/showcase-product';
+
 @import './core/root';
