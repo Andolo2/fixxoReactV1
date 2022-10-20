@@ -9,9 +9,9 @@ const SaleCardsSec = ({title, TopSaleproducts}) => {
            <div className="grey-card">
                <h2>2 for 29USD</h2>
                <button id="right">
-                   <i id="top-left" class="fa-solid fa-chevron-down"></i>
+                   <i id="top-left" className="fa-solid fa-chevron-down"></i>
                    FLASE SALE
-                   <i id="bottom-right" class="fa-solid fa-chevron-up"></i>
+                   <i id="bottom-right" className="fa-solid fa-chevron-up"></i>
                </button>
            </div>
            <div className="sale-cards">

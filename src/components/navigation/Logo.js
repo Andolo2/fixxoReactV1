@@ -1,11 +1,11 @@
 
 import React from 'react'
 import logo from '../../assets/images/nav-bar/logo.svg'
-
+import { NavLink } from 'react-router-dom'
 function Logo() {
   return (
     <div>
-      <a className="main-logo" href="#"><a class="main-logo" href="#"><img src={logo} alt="Fixxo logo"/></a></a>
+      <NavLink className="main-logo" ><img src={logo} alt="Fixxo logo" to="/Home"/></NavLink>
     </div>
   )
 }

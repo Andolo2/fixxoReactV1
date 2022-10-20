@@ -25,6 +25,11 @@
                     width: 540px;
                     height: 444px;
                     background-color: $white-theme-11;
+
+                    img{
+                        width: 540px;
+                        height: 444px;
+                    }
                     
                 }
 
@@ -38,6 +43,11 @@
                         width: 160px;
                         height: 132px;
                         background-color: $white-theme-11;
+
+                        img{
+                            width: 160px;
+                             height: 132px;
+                        }
                     }
                 }
             }
@@ -182,7 +192,7 @@
             .sub-menu{
                 
                 .sub-menu-links{
-                   
+                    text-decoration: none;
                     display: flex;
                     padding: 0;
                     width: 50%;
@@ -195,20 +205,18 @@
 
                     li{
                         list-style: none;
+                        
+                       ;
                         &:hover{
                             border-bottom: 2px solid $red-theme;
                         }
                         
-                        a{
-                            
-                            text-decoration: none;
-                            color: $dark-theme;
-                            font-size: $font-size-16;
-                            font-weight: $font-weight-regular;
-                            
-
-                            
-                        }
+                       & > p{
+                        
+                        color: $dark-theme;
+                        font-size: $font-size-16;
+                        font-weight: $font-weight-regular
+                       }
                     }
 
                         

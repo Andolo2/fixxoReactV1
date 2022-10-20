@@ -1,15 +1,15 @@
 import React from 'react'
 
-function ProductShowcase() {
+const ProductShowcase = ({item}) => {
   return (
     
     <div className="product-showcase">
       
-    <div className="top-showcase"></div>
+    <div className="top-showcase"><img src={item.img}></img></div>
     <div className="bottom-showcase">
-        <div className="show-small"></div>
-        <div className="show-small"></div>
-        <div className="show-small"></div>
+        <div className="show-small"><img src={item.img}></img></div>
+        <div className="show-small"><img src={item.img}></img></div>
+        <div className="show-small"><img src={item.img}></img></div>
     </div>
 </div>
   )
