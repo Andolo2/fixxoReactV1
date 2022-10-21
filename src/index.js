@@ -78,39 +78,6 @@ root.render(
 
 // }
 
-// function nameValidation(){
-
-//   var form = document.getElementById('form');
-//   var fullName = document.getElementById('name').value;
-//   var _text = document.getElementById('name-text')
-
-//   const namePattern = /[A-Z].*[A-Z]/;
-
-  
-
-//   if(fullName.length <= 3){
-//     form.classList.remove('valid')
-//     form.classList.add('invalid')
-//     _text.innerHTML = 'your name is invalid';
-//     _text.style.color = '#FF0000';
-    
-//   }
-
-//   if(fullName.length >= 3 && fullName.match(namePattern)){
-//     form.classList.add('valid')
-//     form.classList.remove('invalid')
-//     _text.innerHTML = 'your name is valid';
-//     _text.style.color = '#00FF00';
-    
-//   }
-
-//   if(fullName == ''){
-//     form.classList.remove('valid')
-//     form.classList.remove('invalid')
-//     _text.innerHTML = '';
-//     _text.style.color = '#00ff00';
-//     console.log('empty')
-//   }
 
  
 // }
