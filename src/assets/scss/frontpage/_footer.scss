@@ -4,7 +4,10 @@
     flex-direction: column;
     background-color: $white-theme-12;
     height: 110px;
-    margin-top: 2rem;
+    margin-top: 5rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 
     .footer-links{
         
