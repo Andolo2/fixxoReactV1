@@ -5,13 +5,15 @@ import React from 'react'
 
 function ContactView() {
 
-  
+  window.top.document.title = 'Contacts || fixxo.';
   return (
     
     <div>
       <NavBarSec />
       <ContactNavSec />
-      <Footer />
+     <div>
+     <Footer />
+     </div>
     </div>
   )
 }

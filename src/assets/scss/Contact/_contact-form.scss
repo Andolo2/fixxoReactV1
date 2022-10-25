@@ -78,7 +78,17 @@
                 font-size: $font-size-18;
                 font-weight: $font-weight-bold;
                 color: red;
+                
             }
+
+            .invalid{
+                color: red;
+            }
+
+            .valid{
+                color: green;
+            }
+
           }
 
         }

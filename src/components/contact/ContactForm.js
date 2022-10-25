@@ -10,17 +10,26 @@ function ContactForm() {
    function isValidEmail(email) {
      return /\S+@\S+\.\S+/.test(email);
    }
+
+
  
    const handleChange = event => {
      if (!isValidEmail(event.target.value)) {
-       setError('Email is invalid');
+       setError(<div className='invalid'>Email is invalid</div>);
      } else {
        setError(null);
+       
      }
      
      if((isValidEmail(event.target.value))){
-         setError('Email is valid');
-     }
+         setError(<div className='valid'>Email is valid</div>);
+
+         
+     }  
+
+   
+
+     
  
      setEmail(event.target.value);
    };
@@ -30,37 +39,32 @@ function ContactForm() {
    
 
    const [name, setName] = useState('');
-   const [nameError, setnameError] = useState(null);
+   const [nameError, setnameError] = useState('');
    
  
    function isValidName(name) {
      return /[A-Z].*[A-Z]/.test(name);
    }
 
-  
-  
-
-   
    const handleNameChange = event => {
       if (!isValidName(event.target.value)) {
-         setnameError('Name is invalid');
+         setnameError(<div className='invalid'>Name is invalid</div>);
 
-       
          
-      } else {
-         setnameError(null);
-         
-      }
+      } 
+     
       
       if((isValidName(event.target.value))){
-         setnameError('Name is valid');
-          console.log('valid')
-
+         setnameError(<div className='valid'>Name is valid</div>);
+        
       }
+      
+      /*else{
+         setnameError('')
+      } */
 
-    
-
-    
+     
+     
 
       setName(event.target.value);
     };
@@ -77,12 +81,12 @@ function ContactForm() {
                      className="input-area"
                      id="name"
                      name="name"
-                     value={name}
-                     onChange={handleNameChange}
+                     onKeyUp={handleNameChange}
                      placeholder="Your Name"
                      required
+                    
                      />
-                     {nameError && <h4>{nameError}</h4>}
+                     {nameError && <h4 className='valid'>{nameError}</h4>}
 
                   
                </div>
@@ -92,10 +96,10 @@ function ContactForm() {
                   className="input-area"
                   id="email"
                   name="email"
-                  value={email}
-                  onChange={handleChange}
+                  onKeyUp={handleChange}
                   placeholder="Your Mail"
                   required
+                  data-required-min="3"
                   />
                   {error && <h4>{error}</h4>}
                </div>
@@ -107,7 +111,7 @@ function ContactForm() {
                
             </textarea>
          </div>
-         <button className="submit-form"  type="submit">Post Comments</button>
+         <button className="submit-form" type="submit">Post Comments</button>
          
       </div>
   )
