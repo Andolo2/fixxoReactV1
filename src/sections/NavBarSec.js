@@ -11,10 +11,10 @@ function NavBar() {
         <Logo></Logo>
         <NavLinks></NavLinks>
         <div className='nav-icons'>
-        <NavIcons link="/*" icon="fa-solid fa-magnifying-glass" />
+        <NavIcons link="/*" icon="fa-solid fa-magnifying-glass"/>
         <NavIcons link="/*" icon="fa-sharp fa-solid fa-code-compare" />
-        <NavIcons link="/*" icon="fa-regular fa-heart" />
-        <NavIcons link="/*" icon="fa-regular fa-bag-shopping" />
+        <NavIcons quantity={1} link="/*" icon="fa-regular fa-heart" />
+        <NavIcons quantity={2} link="/*" icon="fa-regular fa-bag-shopping" />
         </div>
         
       </div>
