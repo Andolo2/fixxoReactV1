@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { NavLink } from 'react-router-dom'
 function SpecCard1() {
   return (
     <div>
@@ -8,7 +8,7 @@ function SpecCard1() {
                 <div className="sp-content">
                     <h3>Track your order</h3>
                     <div className="sp-link">
-                        <a href="#">Get started</a>
+                        <NavLink className="" to="/">Get started</NavLink>
                         <i className="fa-solid fa-chevron-right"></i>
                     </div>
                 </div>

@@ -1,121 +1,122 @@
 import React from 'react'
 import { useState } from 'react'
 
-//EMAIL VALIDATION// //EMAIL VALIDATION// //EMAIL VALIDATION//
-function ContactForm() {
 
-   const [email, setEmail] = useState('');
-   const [error, setError] = useState(null);
- 
-   function isValidEmail(email) {
-     return /\S+@\S+\.\S+/.test(email);
+const ContactFormArea = () => {
+   const [ContactForm, setContactForm] = useState ({name: '', email: '', comment: ''})
+   const [formError, setFormError] = useState({})
+   const [canSubmit, setCanSubmit] = useState(false)
+   
+   const validate = (values) =>{
+      const errors = {}
+
+      const regEx_email = /\S+@\S+\.\S+/;
+      const regEx_name = /[A-Z].*[A-Z]/;
+
+
+      if(!values.name)
+         errors.name = 'Please enter a name'
+      else if(!regEx_name.test(values.name))   
+         errors.name = 'Please enter a name in correct form'
+
+      if(!values.email)
+      errors.email = 'Please enter a email'
+
+      else if(!regEx_email.test(values.email))
+      errors.email = 'Please enter a valid email'
+
+      if(!values.comment)
+      errors.comment = 'Please enter a comment'   
+
+      else if(values.comment.length < 3)
+         errors.comment = 'Minimum of 3 charachers'   
+
+      
+      if(Object.keys(errors).length === 0)
+         setCanSubmit(true)
+      else{
+         setCanSubmit(false)
+      }   
+
+      return errors;
    }
 
+  const handleChange = (e) =>{
+         const {id, value} = e.target
+         setContactForm({...ContactForm, [id]: value })
+  }
 
- 
-   const handleChange = event => {
-     if (!isValidEmail(event.target.value)) {
-       setError(<div className='invalid'>Email is invalid</div>);
-     } else {
-       setError(null);
-       
-     }
-     
-     if((isValidEmail(event.target.value))){
-         setError(<div className='valid'>Email is valid</div>);
+  const handleSubmit = (e) => {
+         e.preventDefault()
+         setFormError (validate(ContactForm))
+  }
 
-         
-     }  
-
-   
-
-     
- 
-     setEmail(event.target.value);
-   };
-
-    //NAME VALIDATION//  //NAME VALIDATION//  //NAME VALIDATION//
-
-   
-
-   const [name, setName] = useState('');
-   const [nameError, setnameError] = useState('');
-   
- 
-   function isValidName(name) {
-     return /[A-Z].*[A-Z]/.test(name);
-   }
-
-   const handleNameChange = event => {
-      if (!isValidName(event.target.value)) {
-         setnameError(<div className='invalid'>Name is invalid</div>);
-
-         
-      } 
-     
-      
-      if((isValidName(event.target.value))){
-         setnameError(<div className='valid'>Name is valid</div>);
-        
-      }
-      
-      /*else{
-         setnameError('')
-      } */
-
-     
-     
-
-      setName(event.target.value);
-    };
+    
 
    
   return (
     <div className="container">
-         <div className="contact-input">
-            <h3>Come in Contact with Us</h3>
-            <form className="contact-form" id="form" action="/">
-               <div className="input-control">
-                  <label htmlFor ="name"></label>
-                  <input
-                     className="input-area"
-                     id="name"
-                     name="name"
-                     onKeyUp={handleNameChange}
-                     placeholder="Your Name"
-                     required
-                    
-                     />
-                     {nameError && <h4 className='valid'>{nameError}</h4>}
+         
+         {
+            canSubmit ? (<div>Thank you for your comment!</div>)
 
-                  
-               </div>
-               <div className="input-control">
-               
-                  <input
-                  className="input-area"
-                  id="email"
-                  name="email"
-                  onKeyUp={handleChange}
-                  placeholder="Your Mail"
-                  required
-                  data-required-min="3"
-                  />
-                  {error && <h4>{error}</h4>}
-               </div>
+            :
 
-            </form>   
+            (
+               <>
+                  <div className="contact-input">
+                  <h3>Come in Contact with Us</h3>
+                  <form className="contact-form" id="form" onSubmit={handleSubmit} noValidate>
+                     <div className="input-control">
+                        
+                        <input
+                           className="input-area"
+                           id="name"
+                           type="text"
+                           value={ContactForm.name}
+                           onChange={handleChange}
+                        />
+                        <div className='errorMessage'>{formError.name}</div>
+                     </div>
+                     
+                     <div className="input-control">
+                        <input
+                        className="input-area"
+                        id="email"
+                        type="email"
+                        onChange={handleChange}
+                        value={ContactForm.email}
+                        />
+                        <div className='errorMessage'>{formError.email}</div>
+                     </div>
+                     
+
+                     <div className="text-area">
+                     <textarea
+                     name="textarea"
+                     type="textarea"
+                     id="comment"
+                     onChange={handleChange}
+                     value={ContactForm.comment} 
+                     
+                     >
+                        
+                     </textarea>
+                     <div className='errorMessage'>{formError.comment}</div>
+                  </div>
+                  <button className="submit-form"  type="submit" value="submit">Post Comments</button>
+
+                  </form>   
          </div>
-         <div className="text-area">
-            <textarea name="textarea" id="textarea" required>
-               
-            </textarea>
-         </div>
-         <button className="submit-form" type="submit">Post Comments</button>
+               </>
+            )
+
+
+         }
          
       </div>
   )
   
 }
 
-export default ContactForm
+export default ContactFormArea

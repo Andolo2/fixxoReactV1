@@ -3,7 +3,7 @@
     & > .container{
         
 
-        
+        display: none;
  
     }
 }
@@ -17,6 +17,7 @@
             border-bottom: 2px solid $grey-theme-20;
             @include container-small;
             padding: 0;
+            display: block;
             
             
             .NineCardHeader{

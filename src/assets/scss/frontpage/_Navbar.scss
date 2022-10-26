@@ -1,29 +1,30 @@
 header{
     background-color: $grey-theme-11;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
+   
 
     & > .container-fluid{
-        
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        justify-content: space-around;
+        max-height: 400px;
+
         .main-logo{
-            margin: 2rem 1rem 2rem 1rem
+            margin: 2rem 1rem 2rem 1rem;
+            grid-column: 1 /1;
+            grid-row: 1 / -1;
+
+            
         }
     
         .nav-bar {
-            position: fixed;
-            transform: translateY(-100%);
-            transition: transform 0.2s;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 99;
-            list-style: none;
-            padding-top: 4rem;
+            grid-column: 1 / -1;
+            grid-row: 2 / -1;
             
             .menu-link{
+                grid-column: 2 /-1;
                 display: block;
                 margin: 2rem 8rem;
                 font-size: $font-size-16;
@@ -38,30 +39,62 @@ header{
             }
     }
     
-    .hamburger {
-        position: fixed;
-        z-index: 100;
-        top: 1rem;
-        right: 1rem;
-        padding: 4px;
-        border: black solid 1px;
-        background: white;
-        cursor: pointer;
     
-        .closeIcon {
-            display: none;
-          }
-      }
+       
     
-    .showMenu {
-    transform: translateY(0);
-    transition: 0.6s ease-in-out;
-    background-color: white;
-    }
+        
+    
+ 
     
     .nav-icons{
-        display: none;
-    }
+        display: flex;
+        margin: 0;
+        padding: 0;
+        justify-content: flex-end;
+        grid-column: 2 / -1;
+        grid-row: 1 / 1;
+        margin: 2rem 1rem 2rem 1rem;
+        
+       
+        
+
+        .circle-layout{
+            display: flex;
+            justify-content: flex-end;
+
+            .circle-container{
+                border-radius: $border-radius-circle;
+                height: 30px;
+                width: 30px;
+                margin: 1rem;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $white-theme-10;
+                position: relative;
+                
+                .badge{
+                    background-color: $red-theme;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin: -0.7rem;
+                    
+                }
+
+                i{
+                    margin: 0.9rem;
+                    color: $dark-theme;
+                    transition: 0.1s;
+
+                    &:hover{
+                        color: $red-theme;
+                    }
+                }
+            }
+        }
+    }  
     }
     
 }
@@ -69,10 +102,13 @@ header{
 
 @media (min-width: 992px){
     header{
-            
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
         & > .container-fluid{
             display: flex;
-            min-height: 45px;
+            max-height: 59px;
             justify-content: space-between;
             align-items: center;
             max-width: $max-width-XXL;
@@ -114,67 +150,11 @@ header{
             
             }
             
-            .hamburger {
-                display: none;
+          
             
-                .closeIcon {
-                    display: none;
-                  }
-            }
+           
             
-            .showMenu {
-            transform: none;
-            transition: 0.6s ease-in-out;
-            background-color: $grey-theme-11;
             
-            }
-            
-            .nav-icons{
-                display: flex;
-                margin: 0;
-                padding: 0;
-                justify-content: flex-end;
-                
-               
-                
-
-                .circle-layout{
-                    display: flex;
-                    justify-content: flex-end;
-    
-                    .circle-container{
-                        border-radius: $border-radius-circle;
-                        height: 30px;
-                        width: 30px;
-                        margin: 1rem;
-                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: $white-theme-10;
-                        position: relative;
-                        
-                        .badge{
-                            background-color: $red-theme;
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            margin: -0.7rem;
-                            
-                        }
-    
-                        i{
-                            margin: 0.9rem;
-                            color: $dark-theme;
-                            transition: 0.1s;
-    
-                            &:hover{
-                                color: $red-theme;
-                            }
-                        }
-                    }
-                }
-            }  
         }
     }
     }

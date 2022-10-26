@@ -1,6 +1,6 @@
 .Jumbotron{
     background-color: $grey-theme-11;
-    margin-top: 4rem;
+    
     
     & > .container-fluid{
         display: flex;
@@ -44,9 +44,11 @@
     .Jumbotron{
         background-color: $grey-theme-11;
         
+        
         & > .container-fluid{
             display: flex;
             width: $max-width-XXL;
+            margin-top: 3.5rem;
            
          
     
