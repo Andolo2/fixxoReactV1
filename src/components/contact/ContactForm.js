@@ -70,12 +70,12 @@ function isValidName(name) {
 
 const handleNameChange = event => {
    if (!isValidName(event.target.value)) {
-      setnameError('Name is invalid');
+      setnameError(<div className='invalidName'>Name is invalid</div>);
    } else {
       setnameError(null);
    }
    if((isValidName(event.target.value))){
-      setnameError('Name is valid');
+      setnameError(<div className='validName'>Name is valid</div>);
        console.log('valid')
    }
 
@@ -91,13 +91,13 @@ const handleNameChange = event => {
 
  const handleEmailChange = event => {
    if (!isValidEmail(event.target.value)) {
-      setErrorEmail('Email is invalid');
+      setErrorEmail(<div className='invalid'>'Email is invalid'</div>);
    } else {
       setErrorEmail(null);
    }
 
    if((isValidEmail(event.target.value))){
-      setErrorEmail('Email is valid');
+      setErrorEmail(<div className='valid'>Email is valid</div>);
    }
 
    setEmail(event.target.value);
@@ -127,9 +127,7 @@ const handleNameChange = event => {
                            onChange={handleChange}
                            onKeyUp= {handleNameChange}
                            name="name"
-                           
-                           
-                           
+  
                         />
                         {nameError && <p className='nameError'>{nameError}</p>}
                         <div className='errorMessage'>{formError.name}</div>

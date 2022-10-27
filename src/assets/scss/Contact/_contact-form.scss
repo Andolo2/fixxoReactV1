@@ -75,6 +75,34 @@
                     position: absolute;
                     right: 0;
                     top: 0;
+                    padding-right: 1rem;
+                    padding-top: 0.1rem;
+
+
+                }
+
+                .emailError{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    padding-right: 1rem;
+                    padding-top: 0.1rem;
+                }
+
+                .invalid{
+                    color: red;
+                }
+
+                .valid{
+                    color: green;
+                }
+
+                .invalidName{
+                    color: red;
+                }
+
+                .validName{
+                    color: green;
                 }
                 
                 label{
@@ -84,9 +112,7 @@
                     width: 100%;
                     display: flex;
                     padding-left: 2rem;
-                    
-                    
-                    
+
                 }
 
 
@@ -99,14 +125,7 @@
                     outline: none;
                 }
                 
-                input:invalid:focus{
-                    border-color: red;
-                }
-
-                input:valid:focus{
-                    border-color: green;
-                }
-                
+               
 
                
             }
