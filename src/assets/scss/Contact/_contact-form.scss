@@ -39,6 +39,11 @@
         margin-top: 3rem;
         margin-bottom: 6rem;
         @include container-small;
+
+        .formMessege{
+            display: flex;
+            justify-content: center;
+        }
         
 
         .contact-input{
@@ -60,11 +65,17 @@
             width: 100%;
             margin-bottom: 1rem;
 
+            
+
             .input-control{
                 position: relative;
                 width: 100%;
                 
-
+                .nameError{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
                 
                 label{
                     display: none;
@@ -99,20 +110,7 @@
 
                
             }
-            h4{
-                font-size: $font-size-11;
-                font-weight: $font-weight-bold;
-                color: red;
-                
-            }
-
-            .invalid{
-                color: red;
-            }
-
-            .valid{
-                color: green;
-            }
+            
 
           }
 
@@ -132,13 +130,7 @@
                 outline: none;
             }
 
-            textarea:invalid:focus{
-                border-color: red;
-            }
-
-            textarea:valid:focus{
-                border-color: green;
-            }
+           
         }
 
         .submit-form{

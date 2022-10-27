@@ -13,6 +13,7 @@ const ContactFormArea = () => {
       const regEx_email = /\S+@\S+\.\S+/;
       const regEx_name = /[A-Z].*[A-Z]/;
 
+      
 
       if(!values.name)
          errors.name = 'Please enter a name'
@@ -38,9 +39,13 @@ const ContactFormArea = () => {
          setCanSubmit(false)
       }   
 
+
+   
+
       return errors;
    }
 
+ 
   const handleChange = (e) =>{
          const {id, value} = e.target
          setContactForm({...ContactForm, [id]: value })
@@ -49,16 +54,61 @@ const ContactFormArea = () => {
   const handleSubmit = (e) => {
          e.preventDefault()
          setFormError (validate(ContactForm))
+        
   }
 
-    
+/********************************************************************OnKeyUP********************************************************/ 
+
+
+const [name, setName] = useState('');
+
+const [nameError, setnameError] = useState(null);
+
+function isValidName(name) {
+  return /[A-Z].*[A-Z]/.test(name);
+}
+
+const handleNameChange = event => {
+   if (!isValidName(event.target.value)) {
+      setnameError('Name is invalid');
+   } else {
+      setnameError(null);
+   }
+   if((isValidName(event.target.value))){
+      setnameError('Name is valid');
+       console.log('valid')
+   }
+
+   setName(event.target.value);
+ };
+
+ const [email, setEmail] = useState('');
+ const [errorEmail, setErrorEmail] = useState(null);
+
+ function isValidEmail(email) {
+   return /\S+@\S+\.\S+/.test(email);
+ }
+
+ const handleEmailChange = event => {
+   if (!isValidEmail(event.target.value)) {
+      setErrorEmail('Email is invalid');
+   } else {
+      setErrorEmail(null);
+   }
+
+   if((isValidEmail(event.target.value))){
+      setErrorEmail('Email is valid');
+   }
+
+   setEmail(event.target.value);
+ };
 
    
   return (
     <div className="container">
          
          {
-            canSubmit ? (<div>Thank you for your comment!</div>)
+            canSubmit ? (<div className='formMessege'>Thank you for your comment!</div>)
 
             :
 
@@ -75,7 +125,13 @@ const ContactFormArea = () => {
                            type="text"
                            value={ContactForm.name}
                            onChange={handleChange}
+                           onKeyUp= {handleNameChange}
+                           name="name"
+                           
+                           
+                           
                         />
+                        {nameError && <p className='nameError'>{nameError}</p>}
                         <div className='errorMessage'>{formError.name}</div>
                      </div>
                      
@@ -86,7 +142,9 @@ const ContactFormArea = () => {
                         type="email"
                         onChange={handleChange}
                         value={ContactForm.email}
+                        onKeyUp={handleEmailChange}
                         />
+                        {errorEmail && <p className='emailError'>{errorEmail}</p>}
                         <div className='errorMessage'>{formError.email}</div>
                      </div>
                      
@@ -98,13 +156,14 @@ const ContactFormArea = () => {
                      id="comment"
                      onChange={handleChange}
                      value={ContactForm.comment} 
+                    
                      
                      >
                         
                      </textarea>
                      <div className='errorMessage'>{formError.comment}</div>
                   </div>
-                  <button className="submit-form"  type="submit" value="submit">Post Comments</button>
+                  <button className="submit-form"   type="submit" value="submit">Post Comments</button>
 
                   </form>   
          </div>
