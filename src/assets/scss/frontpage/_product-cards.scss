@@ -7,12 +7,11 @@
     }
 
     & > .container{
-        display: grid;
+        
        
         & > .product-rows{
-            display: grid;
-            grid-auto-columns: 100px;
-            grid-template-rows: repeat(2, 1fr);
+           display: flex;
+           flex-direction: column;
             @include center-productBox;
         }
       
@@ -24,6 +23,7 @@
     .product-grid{
         & > .container{
             @include container-small;
+
           
 
             & > .product-rows{

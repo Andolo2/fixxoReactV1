@@ -1,5 +1,6 @@
 html{
     
+    html,
     body{
         font-size: 16px;
         line-height: 1.5;
@@ -10,8 +11,7 @@ html{
         box-sizing: border-box;
 
         
-        min-height: calc(100vh - 110px);
-        
+        padding-top: 59px; 
        
     }
 }

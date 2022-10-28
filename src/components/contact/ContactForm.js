@@ -62,7 +62,7 @@ const ContactFormArea = () => {
 
 const [name, setName] = useState('');
 
-const [nameError, setnameError] = useState(null);
+const [nameError, setnameError] = useState('');
 
 function isValidName(name) {
   return /[A-Z].*[A-Z]/.test(name);
@@ -72,32 +72,44 @@ const handleNameChange = event => {
    if (!isValidName(event.target.value)) {
       setnameError(<div className='invalidName'>Name is invalid</div>);
    } else {
-      setnameError(null);
+      
+      setnameError('');
    }
    if((isValidName(event.target.value))){
       setnameError(<div className='validName'>Name is valid</div>);
        console.log('valid')
    }
 
+   if(name.length <= 0){
+      setnameError('');
+   }
+
    setName(event.target.value);
  };
 
  const [email, setEmail] = useState('');
- const [errorEmail, setErrorEmail] = useState(null);
+ const [errorEmail, setErrorEmail] = useState('');
 
  function isValidEmail(email) {
    return /\S+@\S+\.\S+/.test(email);
  }
+ 
 
- const handleEmailChange = event => {
+ const handleEmailChange = (event) => {
    if (!isValidEmail(event.target.value)) {
-      setErrorEmail(<div className='invalid'>'Email is invalid'</div>);
-   } else {
-      setErrorEmail(null);
+      setErrorEmail(<div className='invalid'>Email is invalid</div>);
+   } 
+  
+   else {
+      setErrorEmail('');
    }
 
    if((isValidEmail(event.target.value))){
       setErrorEmail(<div className='valid'>Email is valid</div>);
+   }
+
+   if(email.length <= 0){
+      setErrorEmail('');
    }
 
    setEmail(event.target.value);
@@ -129,7 +141,7 @@ const handleNameChange = event => {
                            name="name"
   
                         />
-                        {nameError && <p className='nameError'>{nameError}</p>}
+                        {nameError && <span className='nameError'>{nameError}</span>}
                         <div className='errorMessage'>{formError.name}</div>
                      </div>
                      
@@ -142,7 +154,7 @@ const handleNameChange = event => {
                         value={ContactForm.email}
                         onKeyUp={handleEmailChange}
                         />
-                        {errorEmail && <p className='emailError'>{errorEmail}</p>}
+                        {errorEmail && <span className='emailError'>{errorEmail}</span>}
                         <div className='errorMessage'>{formError.email}</div>
                      </div>
                      

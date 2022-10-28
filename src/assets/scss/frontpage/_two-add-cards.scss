@@ -31,10 +31,12 @@
 
         .right-card{
             @include black-button;
-
+            
             h3{
                 display: none;
             }
+
+            
             .back-drop-right{
                 img{
                     width: 100%;
