@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 
+
 const ContactFormArea = () => {
    const [ContactForm, setContactForm] = useState ({name: '', email: '', comment: ''})
    const [formError, setFormError] = useState({})
@@ -54,7 +55,7 @@ const ContactFormArea = () => {
   const handleSubmit = (e) => {
          e.preventDefault()
          setFormError (validate(ContactForm))
-        
+         
   }
 
 /********************************************************************OnKeyUP********************************************************/ 
