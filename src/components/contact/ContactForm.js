@@ -7,15 +7,15 @@ const ContactFormArea = () => {
    const [ContactForm, setContactForm] = useState ({name: '', email: '', comment: ''})
    const [formError, setFormError] = useState({})
    const [canSubmit, setCanSubmit] = useState(false)
-   
+  
    const validate = (values) =>{
-      const errors = {}
+      var errors = {}
 
       const regEx_email = /\S+@\S+\.\S+/;
       const regEx_name = /[A-Z].*[A-Z]/;
 
       
-
+      
       if(!values.name)
          errors.name = 'Please enter a name'
       else if(!regEx_name.test(values.name))   
@@ -29,6 +29,8 @@ const ContactFormArea = () => {
 
       if(!values.comment)
       errors.comment = 'Please enter a comment'   
+
+      
 
       else if(values.comment.length < 3)
          errors.comment = 'Minimum of 3 charachers'   
@@ -44,8 +46,10 @@ const ContactFormArea = () => {
    
 
       return errors;
-   }
 
+      
+   }
+   
  
   const handleChange = (e) =>{
          const {id, value} = e.target
@@ -55,7 +59,29 @@ const ContactFormArea = () => {
   const handleSubmit = (e) => {
          e.preventDefault()
          setFormError (validate(ContactForm))
-         
+        
+         if(validate.errors == null){
+            console.log('Hello')
+
+            
+
+            let Json = JSON.stringify({name, email, comment})
+            console.log(Json)
+
+            fetch('https://win22-webapi.azurewebsites.net/api/contactform',{
+               method: 'POST',
+               headers: {
+                  'Content-type': 'application/json'
+               },
+               body: Json,
+            }
+            
+            )
+            .then(res => console.log(res))}
+
+            
+           
+      
   }
 
 /********************************************************************OnKeyUP********************************************************/ 
@@ -78,7 +104,7 @@ const handleNameChange = event => {
    }
    if((isValidName(event.target.value))){
       setnameError(<div className='validName'>Name is valid</div>);
-       console.log('valid')
+      
    }
 
    if(name.length <= 0){
@@ -162,16 +188,15 @@ const handleNameChange = event => {
 
                      <div className="text-area">
                      <textarea
-                     name="textarea"
+                     name="comment"
                      type="textarea"
                      id="comment"
                      onChange={handleChange}
                      value={ContactForm.comment} 
-                    
-                     
-                     >
+
+                     />
                         
-                     </textarea>
+                   
                      <div className='errorMessage'>{formError.comment}</div>
                   </div>
                   <button className="submit-form"   type="submit" value="submit">Post Comments</button>

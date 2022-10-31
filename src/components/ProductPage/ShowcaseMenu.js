@@ -35,7 +35,7 @@ const ShowcaseMenu = ({item}) => {
          <div className="drop-down">
            <span>Color:</span>
             <div className="drop-down-form">
-               <form action="#" onChange="/">
+               <form action="#">
                   <select name="color" id="dropdown-color">
                     <option value="Text">Choose an option</option>
                     <option value="green">green</option>
