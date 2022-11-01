@@ -1,3 +1,31 @@
+export  const submitData = (url, method, data, contenType = 'application/json') => {
+    fetch(url,{
+
+       method: method,
+       headers: {
+          'Content-type': contenType
+       },
+       body: data,
+
+       
+    })
+    .then(res => {
+        
+       if(res.status === 200){
+       
+         return true
+         
+       }
+
+       return false;
+    })
+
+   
+
+  }
+  
+
+
 export const validate = (e, form = null) => {
     if (e.type === 'submit') {
      const errors = {}

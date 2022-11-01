@@ -37,10 +37,10 @@ const ShowcaseMenu = ({item}) => {
             <div className="drop-down-form">
                <form action="#">
                   <select name="color" id="dropdown-color">
-                    <option value="Text">Choose an option</option>
-                    <option value="green">green</option>
-                    <option value="blue">blue</option>
-                    <option value="yellow">yellow</option>
+                    <option value="Text"  onChange={''}>Choose an option</option>
+                    <option value="green" onChange={''}>green</option>
+                    <option value="blue"  onChange={''}>blue</option>
+                    <option value="yellow"onChange={''}>yellow</option>
                   </select>
                </form>
             </div>
@@ -49,7 +49,7 @@ const ShowcaseMenu = ({item}) => {
             <span>QTY:</span>
             <div className="add-sub-content">
                <div id="subtract" className="add-sub-button"><button>-</button></div>
-               <input type="num" value="1" id="sum"/>
+               <input type="num" placeholder='1' id="sum"/>
                <div id="add" className="add-sub-button"><button>+</button></div>
             </div>
          </div>
