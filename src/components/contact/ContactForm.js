@@ -1,98 +1,58 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { validate } from '../../assets/scripts/validationContact'
 
+const ContactForm = () => {
+  let currentPage = "Contact Us"
+  window.top.document.title = `${currentPage} || Fixxo` 
 
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [comments, setComments] = useState('')
+  const [errors, setErrors] = useState({})
+  const [submitted, setSubmitted] = useState(false)
 
-const ContactFormArea = () => {
-   const [ContactForm, setContactForm] = useState ({name: '', email: '', comment: ''})
-   const [formError, setFormError] = useState({})
-   const [canSubmit, setCanSubmit] = useState(false)
-  
-   const validate = (values) =>{
-      var errors = {}
+  const handleChange = (e) => {
+    const {id, value} = e.target
 
-      const regEx_email = /\S+@\S+\.\S+/;
-      const regEx_name = /[A-Z].*[A-Z]/;
+    switch(id) {
+      case 'name':
+        setName(value)
+        break
+      case 'email':
+        setEmail(value)
+        break
+      case 'comments':
+        setComments(value)
+        break
+    }
 
-      
-      
-      if(!values.name)
-         errors.name = 'Please enter a name'
-      else if(!regEx_name.test(values.name))   
-         errors.name = 'Please enter a name in correct form'
-
-      if(!values.email)
-      errors.email = 'Please enter a email'
-
-      else if(!regEx_email.test(values.email))
-      errors.email = 'Please enter a valid email'
-
-      if(!values.comment)
-      errors.comment = 'Please enter a comment'   
-
-      
-
-      else if(values.comment.length < 3)
-         errors.comment = 'Minimum of 3 charachers'   
-
-      
-      if(Object.keys(errors).length === 0)
-         setCanSubmit(true)
-      else{
-         setCanSubmit(false)
-      }   
-
-
-   
-
-      return errors;
-
-      
-   }
-   
- 
-  const handleChange = (e) =>{
-         const {id, value} = e.target
-         setContactForm({...ContactForm, [id]: value })
+    setErrors({...errors, [id]: validate(e)})
   }
 
   const handleSubmit = (e) => {
-         e.preventDefault()
-         setFormError (validate(ContactForm))
-        
-         if(validate.errors == null){
-            console.log('Hello')
-
-            
-
-            let Json = JSON.stringify({name, email, comment})
-            console.log(Json)
-
-            fetch('https://win22-webapi.azurewebsites.net/api/contactform',{
-               method: 'POST',
-               headers: {
-                  'Content-type': 'application/json'
-               },
-               body: Json,
-            }
-            
-            )
-            .then(res => console.log(res))}
-
-            
-           
-      
+    e.preventDefault()
+    setErrors(validate(e, {name, email, comments}))
+  
+    if (errors.name === null && errors.email === null && errors.comments === null) {
+      setSubmitted(true)
+      setName('')
+      setEmail('')
+      setComments('')
+      setErrors({})
+    } else {
+      setSubmitted(false)
+    }
   }
 
 /********************************************************************OnKeyUP********************************************************/ 
 
 
-const [name, setName] = useState('');
+const [checkName, setcheckName] = useState('');
 
 const [nameError, setnameError] = useState('');
 
-function isValidName(name) {
-  return /[A-Z].*[A-Z]/.test(name);
+function isValidName(checkName) {
+  return /[A-Z].*[A-Z]/.test(checkName);
 }
 
 const handleNameChange = event => {
@@ -107,18 +67,18 @@ const handleNameChange = event => {
       
    }
 
-   if(name.length <= 0){
+   if(checkName.length <= 0){
       setnameError('');
    }
 
-   setName(event.target.value);
+   setcheckName(event.target.value);
  };
 
- const [email, setEmail] = useState('');
+ const [checkemail, setCheckEmail] = useState('');
  const [errorEmail, setErrorEmail] = useState('');
 
- function isValidEmail(email) {
-   return /\S+@\S+\.\S+/.test(email);
+ function isValidEmail(checkemail) {
+   return /\S+@\S+\.\S+/.test(checkemail);
  }
  
 
@@ -135,11 +95,11 @@ const handleNameChange = event => {
       setErrorEmail(<div className='valid'>Email is valid</div>);
    }
 
-   if(email.length <= 0){
+   if(checkemail.length <= 0){
       setErrorEmail('');
    }
 
-   setEmail(event.target.value);
+   setCheckEmail(event.target.value);
  };
 
    
@@ -147,62 +107,32 @@ const handleNameChange = event => {
     <div className="container">
          
          {
-            canSubmit ? (<div className='formMessege'>Thank you for your comment!</div>)
+            submitted ? (<div className='formMessege'>Thank you for your comment!</div>)
 
             :
 
             (
                <>
-                  <div className="contact-input">
+               <div className="contact-input">
                   <h3>Come in Contact with Us</h3>
                   <form className="contact-form" id="form" onSubmit={handleSubmit} noValidate>
-                     <div className="input-control">
-                        
-                        <input
-                           className="input-area"
-                           id="name"
-                           type="text"
-                           value={ContactForm.name}
-                           onChange={handleChange}
-                           onKeyUp= {handleNameChange}
-                           name="name"
-  
-                        />
-                        {nameError && <span className='nameError'>{nameError}</span>}
-                        <div className='errorMessage'>{formError.name}</div>
-                     </div>
-                     
-                     <div className="input-control">
-                        <input
-                        className="input-area"
-                        id="email"
-                        type="email"
-                        onChange={handleChange}
-                        value={ContactForm.email}
-                        onKeyUp={handleEmailChange}
-                        />
-                        {errorEmail && <span className='emailError'>{errorEmail}</span>}
-                        <div className='errorMessage'>{formError.email}</div>
-                     </div>
-                     
-
-                     <div className="text-area">
-                     <textarea
-                     name="comment"
-                     type="textarea"
-                     id="comment"
-                     onChange={handleChange}
-                     value={ContactForm.comment} 
-
-                     />
-                        
-                   
-                     <div className='errorMessage'>{formError.comment}</div>
+                  <div className='input-control'>
+                     <input id="name" className={(errors.name ? 'error': '')} value={name} onChange={handleChange}  onKeyUp= {handleNameChange} type="text" placeholder="Your Name" />
+                     <div className="errorMessage">{errors.name}</div>
+                     {nameError && <span className='nameError'>{nameError}</span>}
                   </div>
-                  <button className="submit-form"   type="submit" value="submit">Post Comments</button>
-
+                  <div className='input-control'>
+                     <input id="email" className={(errors.email ? 'error': '')} value={email} onChange={handleChange} onKeyUp={handleEmailChange} type="email" placeholder="Your Mail" />
+                     <div className="errorMessage">{errors.email}</div>
+                     {errorEmail && <span className='emailError'>{errorEmail}</span>}
+                  </div>
+                  <div className="text-area">
+                     <textarea id="comments" className={(errors.comments ? 'error': '')} style={(errors.comments ? {border: '1px solid #FF7373'}: {} )} value={comments} onChange={handleChange} placeholder="Comments"></textarea>
+                     <div className="errorMessage">{errors.comments}</div>
+                  </div>
+                     <button className="submit-form"   type="submit" value="submit">Post Comments</button>
                   </form>   
-         </div>
+                </div>
                </>
             )
 
@@ -214,4 +144,4 @@ const handleNameChange = event => {
   
 }
 
-export default ContactFormArea
+export default ContactForm
