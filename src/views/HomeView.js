@@ -19,17 +19,7 @@ import FooterSec from '../sections/FooterSec'
 
 function Frontpage() {
 
-  const [products, setProducts] = useState([
-    {id: 1, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 2, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 3, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 4, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 5, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 6, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 7, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 8, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    
-  ])
+ 
 
   const [TopSaleproducts, setSaleProducts] = useState([
     {id: 1, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
@@ -65,7 +55,7 @@ function Frontpage() {
       <NavBarSec></NavBarSec>
       <JumboSec></JumboSec>
       <WinterCard></WinterCard>
-      <ProdCard products={products} />
+      <ProdCard title='Featured Products'/>
       <AdCards></AdCards>
       <SpecCard></SpecCard>
       <SaleCardsSec1  TopSaleproducts={TopSaleproducts}/>

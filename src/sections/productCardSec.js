@@ -1,14 +1,16 @@
 
+import { useContext } from 'react'
 import ProdCards from '../components/product-cards/ProductCards'
+import { productContext } from '../assets/context/context'
 
-const ProdSection = ({title, products}) => {
+const ProdSection = ({title}) => {
   
-
+const products = useContext(productContext)
 
   return (
     <section className="product-grid">
     <div className="product-header">
-       <h2>Featured produtcs</h2>
+       <h2>{title}</h2>
    </div>
    <div className='container'>
     <div className='product-rows'>
