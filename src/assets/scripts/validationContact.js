@@ -1,26 +1,20 @@
-export  const submitData = (url, method, data, contenType = 'application/json') => {
-    fetch(url,{
+export const submitData = async (url, method, data, contentType = 'application/json') => {
+    
+    const res = await fetch(url, {
+    
+        method: method,
+           headers: {
+              'Content-Type': contentType
+           },
+           body: data,
+    
+           
+        })
+        console.log(res.status)
+        if (res.status === 200)
+            return true
 
-       method: method,
-       headers: {
-          'Content-type': contenType
-       },
-       body: data,
-
-       
-    })
-    .then(res => {
-        
-       if(res.status === 200){
-       
-         return true
-         
-       }
-
-       return false;
-    })
-
-   
+        return false
 
   }
   

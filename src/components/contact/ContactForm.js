@@ -30,8 +30,10 @@ const ContactForm = () => {
     setErrors({...errors, [id]: validate(e)})
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setSubmitted(false)
+    setFailedSubmit(false)
 
 
     setErrors(validate(e, {name, email, comments}))
@@ -47,7 +49,7 @@ const ContactForm = () => {
          setComments('')
          setErrors({}) 
 
-      if(submitData('https://win22-webapi.azurewebsites.net/api/contactform', 'POST', Json)){
+      if(await submitData('https://win22-webapi.azurewebsites.net/api/contactform', 'POST', Json)){
          setSubmitted(true)
          setFailedSubmit(false)
       }
