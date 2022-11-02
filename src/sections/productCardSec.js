@@ -1,11 +1,11 @@
 
-import { useContext } from 'react'
+import React from 'react'
 import ProdCards from '../components/product-cards/ProductCards'
-import { productContext } from '../assets/context/context'
 
-const ProdSection = ({title}) => {
+
+const ProdSection = ({title, items = []}) => {
   
-const products = useContext(productContext)
+
 
   return (
     <section className="product-grid">
@@ -15,7 +15,7 @@ const products = useContext(productContext)
    <div className='container'>
     <div className='product-rows'>
       {
-        products.map(product => <ProdCards key={product.articleNumber}  item={product}/>)
+        items.map(product => <ProdCards key={product.articleNumber}  item={product}/>)
       }
 
     </div>
