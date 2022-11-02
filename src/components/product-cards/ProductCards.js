@@ -18,7 +18,7 @@ const ProductCards = ({item}) => {
 
   return(
     <div className="product-box">
-    <div className="product-background"><img src={item.img} alt='{item.img}'/></div>
+    <div className="product-background"><img src={item.imageName} alt='{item.img}'/></div>
     <ul className="product-menu">
       <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
       <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>

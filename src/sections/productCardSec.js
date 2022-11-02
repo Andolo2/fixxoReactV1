@@ -15,7 +15,7 @@ const products = useContext(productContext)
    <div className='container'>
     <div className='product-rows'>
       {
-        products.map(product => <ProdCards key={product.id}  item={product}/>)
+        products.map(product => <ProdCards key={product.articleNumber}  item={product}/>)
       }
 
     </div>
