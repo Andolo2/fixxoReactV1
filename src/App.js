@@ -17,7 +17,8 @@ function App() {
 
   const [products, setProducts] = useState({
     allProducts: [],
-    featuredProducts: []
+    featuredProducts: [],
+    displayFourProducts: []
   })
  
 
