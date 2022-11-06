@@ -3,7 +3,7 @@ import ProductShowcase from '../../components/ProductPage/ProductShowcase'
 import ShowcaseMenu from '../../components/ProductPage/ShowcaseMenu'
 import BottomMenu from '../../components/ProductPage/BottomMenu'
 
-const ProductPageSec = ({title, productPage}) => {
+const ProductPageSec = ({title, items = []}) => {
   return(
     <section className="showcase">
     <div className="container">
@@ -11,11 +11,11 @@ const ProductPageSec = ({title, productPage}) => {
        <div className="display-user">
             
             {
-              productPage.map(productPage => <ProductShowcase key={productPage.id}  item={productPage}/>)
-
+              items.map(product => <ProductShowcase key={product.articleNumber}  item={product}/>)
+              
             }
             {
-               productPage.map(productPage => <ShowcaseMenu key={productPage.id}  item={productPage}/>)
+               items.map(product => <ShowcaseMenu key={product.articleNumber}  item={product}/>)
             }
        </div>
        <BottomMenu />

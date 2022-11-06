@@ -19,6 +19,7 @@
             display: flex;
             
             @include left-productBox;
+            
         }
         
     }
@@ -44,7 +45,8 @@
     
             @include container-large;
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
+            flex-direction: row-reverse;
             
     
             .grey-card{

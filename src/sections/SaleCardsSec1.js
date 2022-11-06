@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Salecard1 from '../components/salecards/Salecard1'
 
 
-const SaleCardsSec = ({title, TopSaleproducts}) => {
+const SaleCardsSec = ({title, items = []}) => {
     return(
         <section className="sale-layout-card-1">
         <div className="container-fluid">
@@ -17,14 +17,14 @@ const SaleCardsSec = ({title, TopSaleproducts}) => {
            <div className="sale-cards">
                <div className='sale-card-row-1'>
                {
-                TopSaleproducts.map(TopSaleproducts => <Salecard1 key={TopSaleproducts.id}  item={TopSaleproducts}/>)
+                items.map(product => <Salecard1 key={product.articleNumber}  item={product}/>)
+                
 
                }
                </div>
                <div className='sale-card-row-2'>
                {
-                TopSaleproducts.map(TopSaleproducts => <Salecard1 key={TopSaleproducts.id}  item={TopSaleproducts}/>)
-
+                items.map(product => <Salecard1 key={product.articleNumber}  item={product}/>)
                }
                </div>
            </div>

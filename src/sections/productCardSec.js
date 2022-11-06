@@ -20,8 +20,6 @@ const ProdSection = ({title, items = []}) => {
 
     </div>
 
-
-    
   </div>
     </section>
   )

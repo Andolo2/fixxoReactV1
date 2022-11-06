@@ -12,6 +12,8 @@ import NineCardSec from '../sections/NineCardSec'
 import CircleLinksSec from '../sections/CircleLinksSec'
 import FooterSec from '../sections/FooterSec'
 import {productContext} from '../assets/context/context.js'
+import {featuredContext} from '../assets/context/context.js'
+import {featuredNineContext} from '../assets/context/context.js'
 
 
 
@@ -21,35 +23,15 @@ function Frontpage() {
 
  
 
-  const [TopSaleproducts, setSaleProducts] = useState([
-    {id: 1, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 2, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
 
-  ])
 
-  const [BottomSaleproducts, setBottomSaleProducts] = useState([
-    {id: 1, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 2, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-
-  ])
-
-  const [TopNineproducts, setTopNineproducts] = useState([
-    {id: 1, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 2, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 3, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 4, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 5, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 6, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 7, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 8, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-    {id: 9, productName: 'Modern black blouse', category: 'Fashion', price: '$35.00', rating: 5, img: 'https://images.pexels.com/photos/11833677/pexels-photo-11833677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
-
-  ])
   
   window.top.document.title = 'fixxo1';
 
  
   const productContexts = useContext(productContext)
+  const featuredContexts = useContext(featuredContext)
+  const featuredNineContexts = useContext(featuredNineContext)
   return (
     
     
@@ -57,13 +39,13 @@ function Frontpage() {
       <NavBarSec></NavBarSec>
       <JumboSec></JumboSec>
       <WinterCard></WinterCard>
-      <ProdCard title='Featured Products' items={productContexts.featuredProducts}/>
+      <ProdCard title='Featured Products' items={productContexts}/>
       <AdCards></AdCards>
       <SpecCard></SpecCard>
-      <SaleCardsSec1  TopSaleproducts={TopSaleproducts}/>
-      <SaleCardsSec2  BottomSaleproducts={BottomSaleproducts}/>
+      <SaleCardsSec1  items={featuredContexts}/>
+      <SaleCardsSec2  items={featuredContexts}/>
       <DividerSec></DividerSec>
-      <NineCardSec TopNineproducts={TopNineproducts} />
+      <NineCardSec items={featuredNineContexts}/>
       <CircleLinksSec />
       <FooterSec />
       

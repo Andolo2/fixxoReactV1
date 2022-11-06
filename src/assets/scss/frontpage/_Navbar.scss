@@ -2,7 +2,7 @@ header{
     background-color: $grey-theme-11;
    
 
-    & > .container-fluid{
+    & > .container-fluid{ /*Grid setup for mobile view for easier content placement. */
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -11,7 +11,7 @@ header{
         justify-content: space-around;
         max-height: 400px;
 
-        .main-logo{
+        .main-logo{ /*Logo placement with padding. */
             margin: 2rem 1rem 2rem 1rem;
             grid-column: 1 /1;
             grid-row: 1 / -1;
@@ -19,7 +19,7 @@ header{
             
         }
     
-        .nav-bar {
+        .nav-bar { /*Nav bar placement . */
             grid-column: 1 / -1;
             grid-row: 2 / -1;
             
@@ -39,14 +39,7 @@ header{
             }
     }
     
-    
-       
-    
-        
-    
- 
-    
-    .nav-icons{
+    .nav-icons{  /*Nav icons placement . */
         display: flex;
         margin: 0;
         padding: 0;
@@ -58,7 +51,7 @@ header{
        
         
 
-        .circle-layout{
+        .circle-layout{ /*styling for the circles with icons in the navbar.*/
             display: flex;
             justify-content: flex-end;
 
@@ -74,7 +67,7 @@ header{
                 background-color: $white-theme-10;
                 position: relative;
                 
-                .badge{
+                .badge{ /*Position for the badge symbol*/
                     background-color: $red-theme;
                     position: absolute;
                     top: 0;
@@ -101,12 +94,12 @@ header{
 
 
 @media (min-width: 992px){
-    header{
+    header{ /*Make the nav bar fixed when scrolling.*/
         position: fixed;
         top: 0;
         width: 100%;
         z-index: 1;
-        & > .container-fluid{
+        & > .container-fluid{ /* changes to flex item when on +922px screen. fixed with to vicer etire page. */ 
             display: flex;
             max-height: 59px;
             justify-content: space-between;

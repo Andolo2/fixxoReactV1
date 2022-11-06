@@ -1,3 +1,5 @@
+/*Removeds Ninecards from mobile view.*/
+
 .nine-cards{
     
     & > .container{
@@ -11,7 +13,7 @@
 @media (min-width: 992px){
     .nine-cards{
     
-        & > .container{
+        & > .container{ /*Margin fot for the container and set fixed witdh*/
             margin-bottom: 3rem;
             margin-top: 3rem;
             border-bottom: 2px solid $grey-theme-20;
@@ -33,7 +35,7 @@
     
             .card-rows
             {
-                
+                /* Add mixin stle fot the product tiles and a grid to display them.*/
                 @include side-by-side-productBox;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);

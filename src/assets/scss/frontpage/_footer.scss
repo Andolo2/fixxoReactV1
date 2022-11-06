@@ -1,6 +1,6 @@
 .footer-layout{
 
-    @include center-Content;
+    @include center-Content; /*Centers content and positions thew footer to the bottom of the page. And fixed with of 100%*/
     flex-direction: column;
     background-color: $white-theme-12;
     height: 110px;
@@ -9,8 +9,7 @@
     bottom: 0;
     width: 100%;
 
-    .footer-links{
-        
+    .footer-links{ /* displays flex on links in the footer to a row*/
     
         ul{
             display: flex;

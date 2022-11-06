@@ -16,7 +16,7 @@ const SaleCard2 = ({item}) => {
     
     return(
         <div className="product-box">
-        <div className="product-background"><img src={item.img} alt='{item.img}'/></div>
+        <div className="product-background"><img  src={item.imageName} alt='{item.imageName}'/></div>
         <ul className="product-menu">
           <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
           <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
@@ -31,7 +31,7 @@ const SaleCard2 = ({item}) => {
         </div>
         <div className="product-content">
           <h4>{item.category}</h4>
-          <p>{item.productName}</p>
+          <p>{item.name}</p>
           <div className="product-stars">
           <i className="fa-solid fa-star"></i>
           <i className="fa-solid fa-star"></i>

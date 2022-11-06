@@ -5,11 +5,11 @@ const ProductShowcase = ({item}) => {
     
     <div className="product-showcase">
       
-    <div className="top-showcase"><img src={item.img}></img></div>
+    <div className="top-showcase"><img src={item.imageName}></img></div>
     <div className="bottom-showcase">
-        <div className="show-small"><img src={item.img}></img></div>
-        <div className="show-small"><img src={item.img}></img></div>
-        <div className="show-small"><img src={item.img}></img></div>
+        <div className="show-small"><img src={item.imageName}></img></div>
+        <div className="show-small"><img src={item.imageName}></img></div>
+        <div className="show-small"><img src={item.imageName}></img></div>
     </div>
 </div>
   )

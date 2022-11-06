@@ -1,7 +1,10 @@
 import React from 'react'
+import { NavLink, useParams } from 'react-router-dom'
 
 const SaleCard1 = ({item}) => {
 
+
+  
     const AddToWish = (e) => {
         console.log('Added to wish list')
       }
@@ -16,12 +19,12 @@ const SaleCard1 = ({item}) => {
     
     return(
         <div className="product-box">
-        <div className="product-background"><img src={item.img} alt='{item.img}'/></div>
-        <ul className="product-menu">
+        <div className="product-background"><img src={item.imageName} alt='{item.imageName}'/></div>
+        <NavLink className="product-menu" to={'products/${item.articleNumber}'}>
           <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
           <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
           <button onClick={AddToCart}><i className="fa-regular fa-bag-shopping"></i></button>
-        </ul>
+        </NavLink>
         <div className="quick-view">
           <button>
           <i id="top-left" className="fa-solid fa-chevron-down"></i>
@@ -31,13 +34,13 @@ const SaleCard1 = ({item}) => {
         </div>
         <div className="product-content">
           <h4>{item.category}</h4>
-          <p>{item.productName}</p>
+          <p>{item.name}</p>
           <div className="product-stars">
-          <i className="fa-solid fa-star"></i>
-          <i className="fa-solid fa-star"></i>
-          <i className="fa-solid fa-star"></i>
-          <i className="fa-solid fa-star"></i>
-          <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
+            <i className="fa-solid fa-star"></i>
           </div>
           <p id="product-price">{item.price}</p>
         </div>

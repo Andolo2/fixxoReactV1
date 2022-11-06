@@ -1,22 +1,23 @@
 import NavBarSec from '../sections/NavBarSec'
 import ProductPageSec from '../sections/ProductPage/ProductPageSec'
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Footer from '../sections/FooterSec'
+
+import {showcaseContext} from '../assets/context/context.js'
+
 
 
 function ProductPage() {
   
   window.top.document.title = 'Products || fixxo.';
 
-  const [productPage, setproductPage] = useState([
-    {id: 1, productName: 'Modern black blouse', brand: 'SKU: 12345670 BRAND: The Northland ', price: '$55.00', info: 'textInfo' ,rating: 5, img: 'https://images.pexels.com/photos/13094187/pexels-photo-13094187.jpeg?auto=compress&cs=tinysrgb&w=1600'}
-
-  ])
-
+ 
+  const showcaseContexts = useContext(showcaseContext)
+  
   return (
     <div>
       <NavBarSec></NavBarSec>
-      <ProductPageSec productPage={productPage}/>
+      <ProductPageSec items={showcaseContexts}/>
       <Footer />
       </div>
   )

@@ -1,18 +1,20 @@
+/*MOBILE LAYOUT*/
+
 .Jumbotron{
-    background-color: $grey-theme-11;
+    background-color: $grey-theme-11; /*Set´s background color*/
     
     
-    & > .container-fluid{
+    & > .container-fluid{ /*Center all content within fluid container.*/
         display: flex;
         justify-content: center;
         align-items: center;
 
         .jumbo-img-1,
-        .jumbo-img-2{
+        .jumbo-img-2{ /*Removes images on mobile screens*/
             display: none;
         }
 
-        .jumbo-header{
+        .jumbo-header{ /*Centers header. */ 
             padding-top: 1rem;
             display: flex;
             justify-content: center;
@@ -38,14 +40,14 @@
 }
 
 
-
+/*COMPUER LAYOUT*/
 
 @media (min-width: 992px){
     .Jumbotron{
         background-color: $grey-theme-11;
         
         
-        & > .container-fluid{
+        & > .container-fluid{ /*Set´s with to cover entire witdh of the page.*/
             display: flex;
             width: $max-width-XXL;
             
@@ -63,7 +65,7 @@
                 display: block;
             }
     
-            .jumbo-header{
+            .jumbo-header{ /*Center header content bewtween images.*/
                 padding-top: 1rem;
                 display: flex;
                 justify-content: center;

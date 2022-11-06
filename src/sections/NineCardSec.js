@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import NineCard from '../components/nineCards/NineCard'
 
 
-const NineCardSec = ({title, TopNineproducts}) => {
+const NineCardSec = ({title, items = []}) => {
     return(
         <section className="nine-cards">
             <div className="container">
@@ -14,7 +14,7 @@ const NineCardSec = ({title, TopNineproducts}) => {
             </div>
             <div className="card-rows">
              {
-                 TopNineproducts.map(TopNineproducts => <NineCard key={TopNineproducts.id} item={TopNineproducts} />)
+                  items.map(product => <NineCard key={product.articleNumber}  item={product}/>)
              }
               
            
