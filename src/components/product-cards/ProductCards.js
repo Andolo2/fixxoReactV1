@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
+import { useShoppingCart } from '../../assets/context/shoppingCartContext'
 
 const ProductCards = ({item}) => {
   
@@ -15,6 +16,7 @@ const ProductCards = ({item}) => {
     console.log('Added to cart list')
   }
 
+  const {incrementQuantity} = useShoppingCart()
 
   return(
     <div className="product-box">
@@ -22,7 +24,7 @@ const ProductCards = ({item}) => {
     <ul className="product-menu">
       <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
       <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
-      <button onClick={AddToCart}><i className="fa-regular fa-bag-shopping"></i></button>
+      <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})}><i className="fa-regular fa-bag-shopping"></i></button>
     </ul>
     <NavLink to={`/ProductView/${item.articleNumber}`} className="quick-view">
       <button>
