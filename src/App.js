@@ -8,14 +8,9 @@ import ProductView from './views/ProductView'
 import ProductDetailsView from './views/ProductDetailsView';
 import NotFoundView from './views/NotFoundView';
 import {productContext, featuredContext, featuredNineContext, showcaseContext} from './assets/context/context'
+import {ShoppingCartProvider} from './assets/context/shoppingCartContext'
 
 
-/*
-const [products, SetProducts = useState([])
-
-
-
-*/ 
 
 
 
@@ -72,23 +67,25 @@ const [showcase, setShowcase] = useState()
 
   return (
     <BrowserRouter>
-     <productContext.Provider value={products}>
-      <featuredContext.Provider value={featured}>
+    
+      <productContext.Provider value={products}>
+       <featuredContext.Provider value={featured}>
         <featuredNineContext.Provider value={nineCards}>
-        <showcaseContext.Provider value={showcase}>
-      
-     <Routes>
-        <Route path='/' element={<HomeView  />} end />
-        <Route path='ContactView' element={<ContactView />} />
-        <Route path='ProductView' element={<ProductView />} />
-        <Route path='/ProductView/:id' element={<ProductDetailsView />} />
-        <Route path='*' element={<NotFoundView />} />
-     </Routes>
-
-        </showcaseContext.Provider>
-       </featuredNineContext.Provider>
-      </featuredContext.Provider>
-     </productContext.Provider>
+         <showcaseContext.Provider value={showcase}>
+         <ShoppingCartProvider>
+          <Routes>
+              <Route path='/' element={<HomeView  />} end />
+              <Route path='ContactView' element={<ContactView />} />
+              <Route path='ProductView' element={<ProductView />} />
+              <Route path='/ProductView/:id' element={<ProductDetailsView />} />
+              <Route path='*' element={<NotFoundView />} />
+          </Routes>
+          </ShoppingCartProvider>
+         </showcaseContext.Provider>
+        </featuredNineContext.Provider>
+       </featuredContext.Provider>
+      </productContext.Provider>
+     
     </BrowserRouter>
     
   );

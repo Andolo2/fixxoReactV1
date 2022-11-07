@@ -1,9 +1,13 @@
 import React from 'react'
+import { useShoppingCart } from '../assets/context/shoppingCartContext'
 import Logo from '../components/navigation/Logo'
 import NavIcons from '../components/navigation/NavIcons'
 import NavLinks from '../components/navigation/Navlinks'
 
 function NavBar() {
+
+  const {cartQuantity} = useShoppingCart()
+
   return (
     <div>
      <header>
@@ -14,7 +18,10 @@ function NavBar() {
         <NavIcons link="/*" icon="fa-solid fa-magnifying-glass"/>
         <NavIcons link="/*" icon="fa-sharp fa-solid fa-code-compare" />
         <NavIcons quantity={1} link="/*" icon="fa-regular fa-heart" />
-        <NavIcons quantity={2} link="/*" icon="fa-regular fa-bag-shopping" />
+        <button className="/" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
+        <NavIcons quantity={cartQuantity} link="/" icon="fa-regular fa-bag-shopping" />
+        </button>
+       
         </div>
         
       </div>
