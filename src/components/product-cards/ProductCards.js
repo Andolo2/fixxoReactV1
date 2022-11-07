@@ -24,7 +24,7 @@ const ProductCards = ({item}) => {
       <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
       <button onClick={AddToCart}><i className="fa-regular fa-bag-shopping"></i></button>
     </ul>
-    <NavLink to={'/ProductView/${item.articleNumber}'} className="quick-view">
+    <NavLink to={`/ProductView/${item.articleNumber}`} className="quick-view">
       <button>
       <i id="top-left" className="fa-solid fa-chevron-down"></i>
       SHOP NOW
