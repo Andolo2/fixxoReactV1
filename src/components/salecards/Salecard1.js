@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 
+import { useShoppingCart } from '../../assets/context/shoppingCartContext'
+
 const SaleCard1 = ({item}) => {
 
 
@@ -17,21 +19,23 @@ const SaleCard1 = ({item}) => {
         console.log('Added to cart list')
       }
     
+      const {incrementQuantity} = useShoppingCart()
+
     return(
         <div className="product-box">
         <div className="product-background"><img src={item.imageName} alt='{item.imageName}'/></div>
-        <NavLink className="product-menu" to={'products/${item.articleNumber}'}>
+        <NavLink className="product-menu" to={'/'}>
           <button onClick={AddToWish}><i className="fa-sharp fa-solid fa-code-compare"></i></button>
           <button onClick={AddToSave}><i className="fa-regular fa-heart"></i></button>
-          <button onClick={AddToCart}><i className="fa-regular fa-bag-shopping"></i></button>
+          <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})}><i className="fa-regular fa-bag-shopping"></i></button>
         </NavLink>
-        <div className="quick-view">
+        <NavLink to={`/ProductView/${item.articleNumber}`} className="quick-view">
           <button>
-          <i id="top-left" className="fa-solid fa-chevron-down"></i>
-          SHOP NOW
-          <i id="bottom-right" className="fa-solid fa-chevron-up"></i>
+            <i id="top-left" className="fa-solid fa-chevron-down"></i>
+              SHOP NOW
+            <i id="bottom-right" className="fa-solid fa-chevron-up"></i>
           </button>
-        </div>
+        </NavLink>
         <div className="product-content">
           <h4>{item.category}</h4>
           <p>{item.name}</p>

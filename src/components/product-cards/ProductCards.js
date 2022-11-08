@@ -32,7 +32,6 @@ const ProductCards = ({item}) => {
       SHOP NOW
       <i id="bottom-right" className="fa-solid fa-chevron-up"></i>
       </button>
-      
     </NavLink>
     <div className="product-content">
       <h4>{item.category}</h4>
