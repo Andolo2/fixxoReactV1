@@ -22,6 +22,17 @@
             width: 65px;
             }
         }
+
+        .item-info{
+          
+            .item-info-quantity{
+                margin: 1rem;
+
+                & > button {
+                    margin: 1rem;
+                }
+            }
+        }
     }
 
 }

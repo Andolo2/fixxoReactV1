@@ -4,6 +4,8 @@ import ShoppingCart from "../../components/ShoppingCart/ShoppingCart";
 
 const ShoppingCartContext = createContext()
 
+
+
 export const useShoppingCart = () => {
     return useContext(ShoppingCartContext)
 }
@@ -18,6 +20,7 @@ export const ShoppingCartProvider = ({children}) => {
 
     const getItemQuantity = (articleNumber) => {
         return cartItems.find(item => item.articleNumber === articleNumber)?.quantity || 0
+        
     }   
 
     const incrementQuantity = (cartItem) => {
@@ -28,8 +31,8 @@ export const ShoppingCartProvider = ({children}) => {
                 return [...items, {articleNumber, product, quantity: 1}]
             } else {
                 return items.map(item => {
-                    if (items.articleNumber === articleNumber) {
-                        return [...item, {quantity: item.quantity + 1}]
+                    if (item.articleNumber === articleNumber) {
+                        return {...item, quantity: item.quantity + 1}
 
                     } else{
                         return item
@@ -40,15 +43,17 @@ export const ShoppingCartProvider = ({children}) => {
     }
 
     const decrementQuantity = (cartItem) => {
-        const {articleNumber} = cartItem
-
+        const {articleNumber} = cartItem;
+        
+        
         setCartItems(items => {
             if (items.find(item => item.articleNumber === articleNumber.quantity) === 1){
                 return items.filter(item => item.articleNumber !== articleNumber)
+               
             } else {
                 return items.map(item => {
-                    if (items.articleNumber === articleNumber) {
-                        return [...item, {quantity: item.quantity - 1}]
+                    if (item.articleNumber === articleNumber) {
+                        return {...item, quantity: item.quantity - 1}
 
                     } else{
                         return item
@@ -60,7 +65,9 @@ export const ShoppingCartProvider = ({children}) => {
 
     const removeItem = (articleNumber) => {
         setCartItems(items => {
+           
             return items.filter(item => item.articleNumber !== articleNumber)
+           
         })
     } 
 
