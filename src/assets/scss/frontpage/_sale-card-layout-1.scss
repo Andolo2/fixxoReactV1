@@ -13,12 +13,18 @@
             
         }
 
+        
 
         .sale-card-row-1, /*Only displayes prodict cards. */
         .sale-card-row-2{
             display: flex;
             
             @include left-productBox;
+            .product-box{ /*Sets correct distance between mobiel and 992px*/
+                margin: 2px;
+            }
+
+           
         }
         
     }
@@ -37,6 +43,12 @@
             justify-content: flex-start;
             padding: 0;
             
+            .sale-cards{
+                height: 820px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
     
             .grey-card{ /*Grey card/image takes 50% of the witdh and has a fixed height.*/
                 width: 50%;
@@ -47,12 +59,25 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-    
+                
+
                 h2{
                     font-size: $font-size-45;
                     color: $white-theme-10;
                 }
                 
+            }
+
+            .sale-card-row-1, /*Only displayes product cards. */
+            .sale-card-row-2{
+                display: flex;
+                
+                @include left-productBox;
+                
+                .product-box{ /*Sets correct distance between mobiel and 992px*/
+                    margin-left: 2rem;
+                }
+            
             }
     
         }

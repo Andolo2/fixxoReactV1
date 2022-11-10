@@ -19,7 +19,13 @@
             display: flex;
             
             @include left-productBox;
+
+            .product-box{ /*Sets correct distance between mobiel and 992px*/
+                margin: 2px;
+            }
             
+           
+         
         }
         
     }
@@ -48,7 +54,13 @@
             justify-content: flex-start;
             flex-direction: row-reverse;
             
-    
+            
+            .sale-cards{
+                height: 820px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
             .grey-card{
                 width: 50%;
                 height: 820px;
@@ -64,7 +76,20 @@
                     color: $white-theme-10;
                 }
                 
+                
+                
             }
+            .sale-card-row-1, /*Only displayes product cards. */
+                .sale-card-row-2{
+                    display: flex;
+                    
+                    @include left-productBox;
+                    
+                    .product-box{ /*Sets correct distance between mobiel and 992px*/
+                        margin-left: 2rem;
+                    }
+                
+                }
     
         }
     }

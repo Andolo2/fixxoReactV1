@@ -31,12 +31,16 @@
 
         .right-card{
             @include black-button; /*Include button from _mixin*/
-            
+            position: relative;
             h3{
                 display: none; /*remove header on mobile. */
             }
 
-            
+            .right-card-content{
+                position: absolute;
+                top: 0;
+                padding-top: 4rem;
+            }
             .back-drop-right{
                 img{
                     width: 100%;
@@ -117,15 +121,17 @@
             .right-card{
                 @include black-button; /*inclide button form Mixin.*/
                 
+                
                
                 .right-card-content{ /*Flexes and positions element, same as above. Noit a good solution but it works..*/
                     display: flex;
                     justify-content: flex-end;
                     flex-direction: column;
                     position: absolute;
-                    top:0;
-                    margin-top: 5rem;
-                    margin-left: 3rem;
+                    bottom:0;
+                    
+                    margin-bottom: 3rem;
+                    margin-left: 1rem;
 
                     h3{
                         display: inline;
