@@ -1,39 +1,32 @@
 
 .showcase{
 
-    h1{
+    h1{ /*Styling for the header, centers content*/
         text-align: center;
         margin-top: 5rem;
         margin-bottom: 5rem;
         color: $red-theme;
         font-size: $font-size-16;
         font-weight: $font-weight-medium;
-
-
     }
 
     & > .container{
-
         margin-top: 3rem;
       
-        
        .display-user{
         display: flex;
             .product-showcase{
-
-                .top-showcase{
+                .top-showcase{ /*Fixed with for the big image holder in the showcase area*/
                     width: 540px;
                     height: 444px;
                     background-color: $white-theme-11;
-
                     img{
                         width: 540px;
                         height: 444px;
                     }
-                    
                 }
 
-                .bottom-showcase{
+                .bottom-showcase{ /*Styling for the three small images below, fixed with and spaces with flex.*/
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -43,7 +36,6 @@
                         width: 160px;
                         height: 132px;
                         background-color: $white-theme-11;
-
                         img{
                             width: 160px;
                              height: 132px;
@@ -52,15 +44,12 @@
                 }
             }
 
-            .showcase-menu{
+            .showcase-menu{ /*Styling for the menu, sets font size and weight.*/
                     margin-left: 2rem;
-
                     .showcase-menu-content{
-
                         h2{
                             font-size: $font-size-20;
                             font-weight: $font-weight-bold;
-
                         }
 
                         p{
@@ -83,16 +72,13 @@
                         
                         font-size: $font-size-16;
                         font-weight: $font-weight-regular;
-
                     }
 
-
-                .interact-user{
+                .interact-user{ /*Styling for the size and plus/minus buttons on the product page.*/ 
                     
                     width: 40%;
-                   
 
-                    .size-buttons-all{
+                    .size-buttons-all{ /*styling fot the clothe size buttons, fixed widht and height.*/
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
@@ -104,26 +90,22 @@
                             height: 30px;
                             margin: 0.3rem;
                             background-color: $white-theme-10;
-
                         }
                     }
 
-                    .drop-down{
+                    .drop-down{ /*Styling for the drop down menu.*/
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
                         margin-bottom: 1rem;
-
                         select{
                             height: 40px;
                         }
-
                     }
-                    .add-subtract{
+                    .add-subtract{ /*Created my own  plus and minus buttons and an input element*/
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-
                         position: relative;
 
                         .add-sub-content{
@@ -143,25 +125,17 @@
                                 border: 1px solid $dark-theme;
                                 font-size: $font-size-20;
                                 font-weight: $font-weight-bold;
-
                              }
-     
                             }
-                            
                         }
-
-                       
-                       
                     }
-
                 }   
                 
-                .showcase-links{
+                .showcase-links{ /*Styling for the socoal media links.*/
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     margin-top: 3rem;
-                    
 
                     .showcase-icons{
                         display: flex;
@@ -169,7 +143,6 @@
                         li{
                             list-style: none;
                            
-
                             a{
                                 margin: 0.5rem;
                                 color: $dark-theme;
@@ -180,7 +153,6 @@
                                 &:hover{
                                     color: $red-theme;
                                 }
-
                             }
                         }
                     }
@@ -191,7 +163,7 @@
          margin-top: 5rem;
             .sub-menu{
                 
-                .sub-menu-links{
+                .sub-menu-links{ /*Spaces the link elements in a row*/
                     text-decoration: none;
                     display: flex;
                     padding: 0;
@@ -200,14 +172,11 @@
                     border-bottom: 2px solid $red-theme;
                     border-width: thin;
                     transition: 0.3s;
-
-                   
-
+    
                     li{
                         list-style: none;
-                        
-                       ;
-                        &:hover{
+                       
+                        &:hover{ /*Adds a slider effect to the link elements.*/
                             border-bottom: 2px solid $red-theme;
                         }
                         
@@ -218,17 +187,10 @@
                         font-weight: $font-weight-regular
                        }
                     }
-
-                        
-                    
                 }
             }
        }
-    
         .related-prod{
-
-           
-
             .product-content{
                 display: flex;
                 justify-content: space-evenly;

@@ -1,11 +1,11 @@
-@mixin center-Content {
+@mixin center-Content { /*Mixin that centers content*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin red-button {
-    button{
+@mixin red-button { /*Styling fot the red buttons*/
+    button{ /*Fixed with  and set to a relative postion*/
         border: none;
         background-color: $red-theme;
         padding: 1rem;
@@ -19,7 +19,7 @@
             background-color: $dark-theme;
         }
 
-       #top-left{
+       #top-left{ /*Rotatses corner icon and positioin it inside button*/
         transform: rotate(135deg);
         color: white;
         position: absolute;
@@ -27,7 +27,7 @@
         left: 0;
         padding: 0.5rem;
         }
-        #bottom-right{
+        #bottom-right{ /*Rotatses corner icon and positioin it inside button*/
             transform: rotate(135deg); 
             color: white;
             position: absolute;
@@ -39,7 +39,7 @@
     }
 }
 
-@mixin black-button {
+@mixin black-button { /*Same setup as red button but colors reversed. */
     button{
         border: none;
         background-color: $dark-theme;
@@ -82,24 +82,24 @@
     }
 }
 
-@mixin center-productBox {
+@mixin center-productBox { /*CSS styling fot the product box with centered text content.*/ 
     .product-box{
-        display: flex;
+        display: flex; /*Centered contnent in a column layout*/
         flex-direction: column;
         @include center-Content;
         position: relative;
         margin: 2rem;
         
-        overflow: hidden; 
+        overflow: hidden; /*Hides the floating icons when box is not hovered*/
 
         &:hover{
             .product-menu{
-                top: 2px;
+                top: 2px; /* Icons stop 2px from te top*/
 
             }
             .quick-view{
                 height: 15%;
-                transition: 0.3s;
+                transition: 0.3s; /*Button takes 15% of image when hovered*/
 
                
               
@@ -118,7 +118,7 @@
             
         }
         
-        .product-background{
+        .product-background{ /*Background/image is set with fixed with.*/
             width: 200px;
             height: 200px;
             background-color: $white-theme-20;
@@ -129,11 +129,9 @@
                 width: 225px;
                 height: 200px;
             }
-            
-            
         }
         
-        .product-content{
+        .product-content{ /*Centers the content and set´s the sizes and weights of the elements. */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -158,7 +156,7 @@
             }
         }
 
-        .quick-view{
+        .quick-view{ /*Styling for the floating sidebar. Position and hidden wuntil card is hovered. */
             position: absolute;
             height: 0%;
             background-color: $red-theme;
@@ -180,7 +178,7 @@
                 
                
 
-                #top-left{
+                #top-left{ /* Rotates the corner icon and set´s the postion.*/
                     transform: rotate(135deg);
                     color: white;
                     position: absolute;
@@ -188,7 +186,7 @@
                     left: 0;
                     padding: 0.5rem;
                     }
-                    #bottom-right{
+                    #bottom-right{ /* Rotates the corner icon and set´s the postion.*/
                         transform: rotate(135deg); 
                         color: white;
                         position: absolute;
@@ -200,7 +198,7 @@
             }
         }
 
-        .product-menu{
+        .product-menu{ /*Set´s the placement for the menu*/
             position: absolute;
            
             top: 100%;
@@ -214,7 +212,7 @@
             
 
 
-            button{
+            button{ /*Make the icons have a circle container*/
                 border-radius: $border-radius-circle;
                 background-color: $white-theme-10;
                 height: 30px;
@@ -233,7 +231,7 @@
                 }
             }
 
-            i{
+            i{ /*Padding fot the elements inside circles.*/
                 padding: 0.3rem;
                 color: $dark-theme;
                 &:hover{
@@ -246,7 +244,7 @@
     }
 }
 
-@mixin left-productBox {
+@mixin left-productBox { /*Exact same setup as center-ProductBox but the text content is based in the left insead of centered.*/
     .product-box{
         display: flex;
         flex-direction: column;
@@ -398,7 +396,7 @@
 }
 
 
-@mixin side-by-side-productBox {
+@mixin side-by-side-productBox { /*Exact same setup as but the content and image are in a row instaded of a column*/
     .product-box{
         margin: 0rem 0rem 0rem 0rem;
         display: flex;

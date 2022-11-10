@@ -1,6 +1,6 @@
 .two-ad-cards{
 
-    & > .container{
+    & > .container{ /* Flex column based layout with 100% widht of parent element*/
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -20,7 +20,7 @@
                 }
             }
 
-            button{
+            button{ /*Needed to position the button for it to look good. Not a great solution. Should be chnaged.*/
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -30,10 +30,10 @@
         }
 
         .right-card{
-            @include black-button;
+            @include black-button; /*Include button from _mixin*/
             
             h3{
-                display: none;
+                display: none; /*remove header on mobile. */
             }
 
             
@@ -42,7 +42,7 @@
                     width: 100%;
                 }
 
-                button{
+                button{ /*Same as the button above, need to position the element. */
                     position: absolute;
                     left: 0;
                     bottom: 0;
@@ -74,7 +74,7 @@
 
     .two-ad-cards{
 
-        & > .container{
+        & > .container{ /*Icludes container LArge mixin and flex row layout*/
             display: flex;
             flex-direction: row;
             padding: 0;
@@ -87,19 +87,18 @@
                 position: relative;
                
 
-                .left-card-content{
+                .left-card-content{ /*flexes the contentn and positioned id, not a good solution but it works..*/
                     
                     display: flex;
                     justify-content: flex-end;
                     flex-direction: column;
-            
                     position: absolute;
                     top:0;
                     right: 0;
                     margin-top: 5rem;
                     margin-right: 1rem;
 
-                    h3{
+                    h3{ /*Adds header in 922px+ layout*/
                         display: inline;
                         font-size: $font-size-45;
                         font-weight: $font-weight-bold;
@@ -116,10 +115,10 @@
             }
     
             .right-card{
-                @include black-button;
+                @include black-button; /*inclide button form Mixin.*/
                 
                
-                .right-card-content{
+                .right-card-content{ /*Flexes and positions element, same as above. Noit a good solution but it works..*/
                     display: flex;
                     justify-content: flex-end;
                     flex-direction: column;

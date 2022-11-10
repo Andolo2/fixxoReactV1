@@ -1,3 +1,6 @@
+:root{
+    padding-top: 0px; /*removes padding on mobile*/
+}
 header{
     background-color: $grey-theme-11;
    
@@ -10,6 +13,7 @@ header{
         grid-row-gap: 0px;
         justify-content: space-around;
         max-height: 400px;
+        
 
         .main-logo{ /*Logo placement with padding. */
             margin: 2rem 1rem 2rem 1rem;
@@ -57,6 +61,7 @@ header{
         .circle-layout{ /*styling for the circles with icons in the navbar.*/
             display: flex;
             justify-content: flex-end;
+            height: 55px;
 
             .circle-container{
                 border-radius: $border-radius-circle;
@@ -79,7 +84,7 @@ header{
                     
                 }
 
-                i{
+                i{ /*Margin for the symbols inside the circles.*/
                     margin: 0.9rem;
                     color: $dark-theme;
                     transition: 0.1s;
@@ -97,11 +102,16 @@ header{
 
 
 @media (min-width: 992px){
+    :root{
+        padding-top: 59px; /*Adds padding for the header to be sticky*/ 
+    }
+    
     header{ /*Make the nav bar fixed when scrolling.*/
         position: fixed;
         top: 0;
         width: 100%;
         z-index: 1;
+        
         & > .container-fluid{ /* changes to flex item when on +922px screen. fixed with to vicer etire page. */ 
             display: flex;
             max-height: 59px;

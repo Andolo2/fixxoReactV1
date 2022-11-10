@@ -3,18 +3,18 @@
     & > .container-fluid{
 
         
-        display: flex;
+        display: flex; /*Center the conteent inside a fluid container*/
         align-items: center;
         justify-content: center;
        
      
-        .grey-card{
+        .grey-card{ /*Removes the greycard/image on mobile.*/
             display: none;
             
         }
 
 
-        .sale-card-row-1,
+        .sale-card-row-1, /*Only displayes product cards. */
         .sale-card-row-2{
             display: flex;
             
@@ -43,17 +43,17 @@
         
         & > .container-fluid{
     
-            @include container-large;
+            @include container-large; /*large container that is left based on the front page. */
             display: flex;
             justify-content: flex-start;
             flex-direction: row-reverse;
             
     
             .grey-card{
-                width: 820px;
+                width: 50%;
                 height: 820px;
                 background-color: $grey-theme-21;
-                @include black-button;
+                @include black-button;  /*Include black button from _Mixin.*/
                 display: flex;
                 align-items: center;
                 justify-content: center;
