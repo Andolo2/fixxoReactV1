@@ -1,4 +1,28 @@
+To pass, the following is required:
 
+ - Your page must be built with React or with Vue.
+ - The page does not need to be responsive or adapted for either mobile or tablets.
+ - The pages and components that appear in the design file for approval must be included.
+ - It must be possible to navigate between pages.
+ - Your page must use State Management to be able to store information.
+ - Your page must use Hooks/Lifecycles to be able to retrieve data from a web api.
+ - The forms that exist must be validated according to what you consider appropriate to validate against, such as valid e-mail address, minimum number of characters,etc.
+ 
+The following is required for successful approval on a hgher grade:
+
+ - Page must be built with React or with Vue.
+ - The page must be responsive and there must be an intended structure for mobiles and tablets.
+ - The pages and components that appear in the design file for well-approved must be included.
+ - It must be possible to navigate between pages.
+ - Your page must use State Management to be able to store information.
+ - Your page must use Hooks/Lifecycles to be able to retrieve data from a web api.
+ - The forms that exist must be validated according to what you consider appropriate to validate against, such as valid e-mail address, minimum number of characters, etc.
+ - A product must be able to be added to a shopping cart and the shopping cart must be updated with the correct information such as product, quantity and price.
+ - You should have at least one simple unit test.
+
+
+All the requirments where met to the best of my abailities, awaiting repsone from the teacher regarding my grade. 
+ 
 ![Skärmklipp1](https://user-images.githubusercontent.com/97985249/201357674-221c96d4-635f-4a6b-a6a5-70b94c9b96a3.PNG)
 ![Skärmklipp2](https://user-images.githubusercontent.com/97985249/201357713-c95bb9b2-d855-4c20-8db0-57aac4100a52.PNG)
 ![Skärmklipp3](https://user-images.githubusercontent.com/97985249/201357722-208b658b-848f-4481-ab74-fe9d108e4ca3.PNG)
