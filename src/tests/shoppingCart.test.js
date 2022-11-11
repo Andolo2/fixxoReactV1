@@ -1,25 +1,25 @@
-import {render, fireEvent} from '@testing-library/react'
+import {render, fireEvent, screen, within} from '@testing-library/react'
+
 
 import ShoppingCartContext from '../assets/context/shoppingCartContext'
 import ShoppingCartItem from '../components/ShoppingCart/ShoppingCartItem'
-
-
-describe(ShoppingCartItem, () => {
+import Jumbotron from '../components/jumbotron/Jumbotron'
 
 
 
-    it('If the increment buttons is pressed'), () =>{
-        
-        const {getByTestID, getByRole} = render(<ShoppingCartItem/>)
-        const button = getByRole('button', {name: '-'})
+test('loads text in jumbotron', async () => { /* Simple test that checks if the text appears in the jumbotron component*/
+    // ARRANGE
+   
+    const { getByTestId } = render(<Jumbotron/>)
+  
+    // ACT
+    
 
-        fireEvent.click(button)
-
-        const value = Number(getByTestID('item.quantity').textContent)
-
-        expect(value.toEqual(-1))
-        
-    }
-})
-
+    const jumboText = getByTestId('jumbo').innerHTML
+    
+  
+    // ASSERT
+    expect(jumboText).toBe('Online shopping free home delivery over $100')
+    
+  })
 

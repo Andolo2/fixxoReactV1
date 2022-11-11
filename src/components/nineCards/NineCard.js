@@ -12,10 +12,6 @@ const NineCard = ({item}) => {
         console.log('Added to save list')
       }
     
-    
- 
-
-
       const {incrementQuantity} = useShoppingCart()
 
 

@@ -4,8 +4,6 @@ import { useShoppingCart } from '../../assets/context/shoppingCartContext'
 const  ShoppingCartItem = ({item}) => {
 
   const {incrementQuantity, decrementQuantity, removeItem} = useShoppingCart();
-  
-
 
   return (
     <div className='shoppingCartItem'>
@@ -14,24 +12,18 @@ const  ShoppingCartItem = ({item}) => {
       </div>
       <div className="item-info">
         <div className='item-info-name'>{item.product.name}</div>
-
-      
-
         <div className='item-info-quantity'>
-        <button onClick={() => incrementQuantity(item)}>+</button>
-          <span>{item.quantity}</span>
-          <button data-testid={item.quantity} onClick={() => decrementQuantity(item)}>-</button>
+          <button onClick={() => incrementQuantity(item)}>+</button>
+            <span>{item.quantity}</span>
+          <button data-testid='item.quantity' onClick={() => decrementQuantity(item)}>-</button>
         </div>
-
-
       </div>
       <div className='item-price'>
-        <div>price: {item.product.price * item.quantity}</div>
+        <div data-testid='item.quantitys' >price: {item.product.price * item.quantity}</div>
         <button onClick={() => removeItem(item.articleNumber)}><i className='fa-regular fa-trash'></i></button>
       </div>
       
     </div>
-    
   )
 }
 

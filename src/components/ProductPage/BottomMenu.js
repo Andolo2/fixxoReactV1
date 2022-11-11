@@ -5,12 +5,10 @@ function BottomMenu() {
     <div className="bottom-sub-menu">
     <div className="sub-menu">
        <ul className="sub-menu-links">
-
           <NavLink className='sub-menu-links' to='/Description'><li><p>Description</p></li></NavLink>
           <NavLink className='sub-menu-links' to='/Additional'><li><p>Additional</p></li></NavLink>
           <NavLink className='sub-menu-links' to='/Returns'><li><p>Returns</p></li></NavLink>
           <NavLink className='sub-menu-links' to='/Reviews'><li><p>Reviews</p></li></NavLink>
-
        </ul>
     </div>
     <div className="sub-menu-text">
@@ -19,7 +17,6 @@ function BottomMenu() {
           * Securing as informed declared or margaret. <br/>
           * Joy horrible moreover man feelings own shy. <br/>
       <p>On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem. </p>
-
     </div>
    </div>
    

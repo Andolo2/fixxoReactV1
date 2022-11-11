@@ -10,7 +10,7 @@ function Jumbotron() {
             <div className="jumbo-img-1"><img src={female} alt="female-on-chair"/></div>
                 <div className="jumbo-header">
                     <h1><strong>SALE UP</strong> <br/> to 50% off </h1>
-                    <p>Online shopping free home delivery over $100</p>
+                    <p data-testid='jumbo'>Online shopping free home delivery over $100</p>
                     <button>
                         <i id="top-left" className="fa-solid fa-chevron-down"></i>
                         SHOP NOW

@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 import { submitData, validate } from '../../assets/scripts/validationContact'
 
-const ContactForm = () => {
+const ContactForm = () => { /* */ 
   let currentPage = "Contact Us"
   window.top.document.title = `${currentPage} || Fixxo` 
 
-  const [name, setName] = useState('')
+  const [name, setName] = useState('') 
   const [email, setEmail] = useState('')
   const [comments, setComments] = useState('')
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
   const [failedSubmit, setFailedSubmit] = useState(false)
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { 
     const {id, value} = e.target
 
-    switch(id) {
+    switch(id) { 
       case 'name':
         setName(value)
         break
@@ -43,7 +43,6 @@ const ContactForm = () => {
       let Json = JSON.stringify({name, email, comments})
             console.log(Json)
 
-
          setName('')
          setEmail('')
          setComments('')
@@ -63,7 +62,7 @@ const ContactForm = () => {
   }
 
 /********************************************************************OnKeyUP********************************************************/ 
-
+/* On key up Validation, it tests a regexKey wehen the user klicks a button to chewck if it matches the key. If not, it will set an error message. */ 
 
 const [checkName, setcheckName] = useState('');
 
@@ -73,19 +72,19 @@ function isValidName(checkName) {
   return /[A-Z].*[A-Z]/.test(checkName);
 }
 
-const handleNameChange = event => {
+const handleNameChange = event => { /* Test if the name is not valid*/
    if (!isValidName(event.target.value)) {
       setnameError(<div className='invalidName'>Name is invalid</div>);
    } else {
       
       setnameError('');
    }
-   if((isValidName(event.target.value))){
+   if((isValidName(event.target.value))){  /* Test if the name is valid*/
       setnameError(<div className='validName'>Name is valid</div>);
       
    }
 
-   if(checkName.length <= 0){
+   if(checkName.length <= 0){  /* Remvies text from input element if empty*/
       setnameError('');
    }
 
@@ -100,7 +99,7 @@ const handleNameChange = event => {
  }
  
 
- const handleEmailChange = (event) => {
+ const handleEmailChange = (event) => { /* Test if the email is not valid*/
    if (!isValidEmail(event.target.value)) {
       setErrorEmail(<div className='invalid'>Email is invalid</div>);
    } 
@@ -109,11 +108,11 @@ const handleNameChange = event => {
       setErrorEmail('');
    }
 
-   if((isValidEmail(event.target.value))){
+   if((isValidEmail(event.target.value))){ /* Test if the email is valid*/
       setErrorEmail(<div className='valid'>Email is valid</div>);
    }
 
-   if(checkemail.length <= 0){
+   if(checkemail.length <= 0){ /* Removes text from input element if empty*/
       setErrorEmail('');
    }
 
@@ -126,7 +125,6 @@ const handleNameChange = event => {
          
          {
             submitted ? (<div className='formMessege'>Thank you for your comment!</div>)
-
 
             :
 
