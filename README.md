@@ -1,3 +1,6 @@
+A website created with React and styled with Sccs making use of a component, section and view structure. 
+
+
 To pass, the following is required:
 
  - Your page must be built with React or with Vue.
